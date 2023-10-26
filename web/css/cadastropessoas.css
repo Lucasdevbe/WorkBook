@@ -1,0 +1,94 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 27 de ago de 2023, 22:23:26
+    Author     : Caio Gustavo
+*/
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: url("../imagens/imgindex.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente */
+}
+
+.container {
+    margin-top: 40px;
+    background-color: rgba(255, 255, 255, 0.8); /* Cor de fundo semi-transparente */
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%; /* Largura do container */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente */
+}
+
+.form-container {
+    width: 100%; /* Largura do formulário */
+}
+
+.form-field {
+    width: calc(33.33% - 10px); /* 3 campos lado a lado com 20px de espaçamento */
+    padding: 10px;
+    margin-top: 10px;
+    margin-right: 7px; /* Espaçamento entre os campos */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.save-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.delete-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+
+}
+
+.table-container {
+    max-height: 300px; /* Altura máxima da tabela */
+    width: 100%;
+    overflow: auto; /* Adiciona barra de rolagem quando necessário */
+}
+
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+}
+
