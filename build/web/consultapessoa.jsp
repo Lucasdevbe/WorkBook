@@ -66,15 +66,15 @@
         <div class="container">
             <div class="result">
                 <label class="result-label" for="nome">Nome:</label>
-                <input class="result-input" type="text" id="nome" name="nome" value="${nome}" required>
+                <input class="result-input" type="text" id="nome" name="nome" value="${pessoa.nome}" required>
             </div>
             <div class="result">
                 <label class="result-label" for="dtNascimento">Data Nascimento:</label>
-                <input class="result-input" type="text" id="dtNascimento" name="dtNascimento" placeholder="dd/mm/aaaa" data-inputmask="'alias': 'dd/mm/yyyy'" value="${dtNascimento}" required>
+                <input class="result-input" type="text" id="dtNascimento" name="dtNascimento" placeholder="dd/mm/aaaa" data-inputmask="'alias': 'dd/mm/yyyy'" value="${pessoa.dtNascimento}" required>
             </div>
             <div class="result">
                 <label class="result-label" for="cidade">Cidade:</label>
-                <input class="result-input" type="text" id="cidade" name="cidade" value="${cidade}" required>
+                <input class="result-input" type="text" id="cidade" name="cidade" value="${pessoa.cidade}" required>
             </div>
             <button type="button" class="button" onclick="voltarParaIndex()">Voltar</button>
         </div>

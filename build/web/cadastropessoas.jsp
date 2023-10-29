@@ -21,7 +21,7 @@
     <body onload="iniciar()">
         <div class="container">
             <div class="form-container">
-                <form action="/AplicacaoModelo/SalvarPessoa" method="post">
+                <form action="/WorkBook/SalvarPessoa" method="post">
                     <input type="text" id="nome" name="nome" class="form-field" placeholder="Nome" required>
                     <input type="date" id="dataNascimento" name="dtNascimento" class="form-field" required>
                     <input type="text" id="cidade" name="cidade" class="form-field" placeholder="Cidade" required>

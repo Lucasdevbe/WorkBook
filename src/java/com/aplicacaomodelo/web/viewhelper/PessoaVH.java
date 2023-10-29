@@ -11,11 +11,6 @@ import com.aplicacaomodelo.web.interfaces.IViewHelper;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -45,7 +40,20 @@ public class PessoaVH implements IViewHelper {
             } catch (ParseException ex) {
                 Logger.getLogger(PessoaVH.class.getName()).log(Level.SEVERE, null, ex);
             }
+            
             pessoa.setCidade(cidade);
+            
+        }else if(operacao.equals("VISUALIZAR")){
+         
+            String nome = request.getParameter("nome");
+            pessoa.setNome(nome);
+        
+           
+          
+        }else if(operacao.equals("EXCLUIR")){
+            
+            String nome = request.getParameter("nome");
+            pessoa.setNome(nome);
         }
 
         return pessoa;

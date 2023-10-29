@@ -6,12 +6,9 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>Servlet</servlet-name>
-        <url-pattern>/ConsultarPessoa</url-pattern>
+        <url-pattern>/VisualizarPessoa</url-pattern>
         <url-pattern>/SalvarPessoa</url-pattern>
+        <url-pattern>/ExcluirPessoa</url-pattern>
     </servlet-mapping>
-    <session-config>
-        <session-timeout>
-            30
-        </session-timeout>
-    </session-config>
+    
 </web-app>

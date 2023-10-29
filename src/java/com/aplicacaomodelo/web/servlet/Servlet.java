@@ -53,8 +53,10 @@ public class Servlet extends HttpServlet {
         /*A chave do mapa é o mapeamento da servlet para cada form que 
     	 * está configurado no web.xml e sendo utilizada no action do html
          */
-        vhs.put("/AplicacaoModelo/ConsultarPessoa", new PessoaVH());
-        vhs.put("/AplicacaoModelo/SalvarPessoa", new PessoaVH());
+        vhs.put("/WorkBook/ConsultarPessoa", new PessoaVH());
+        vhs.put("/WorkBook/SalvarPessoa", new PessoaVH());
+        vhs.put("/WorkBook/VisualizarPessoa", new PessoaVH());
+        vhs.put("/WorkBook/ExcluirPessoa", new PessoaVH());
     }
 
     /**

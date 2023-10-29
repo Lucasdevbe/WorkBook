@@ -27,7 +27,7 @@ public class Fachada implements IFachada {
      * Mapa de DAOS, será indexado pelo nome da entidade O valor é uma instância
      * do DAO para uma dada entidade;
      */
-    private Map<String, IDAO> daos;
+    private final Map<String, IDAO> daos;
 
     /**
      * Mapa para conter as regras de negócio de todas operações por entidade; O
@@ -84,10 +84,7 @@ public class Fachada implements IFachada {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    @Override
-    public Resultado excluir(EntidadeDominio entidade) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+   
 
     @Override
     public Resultado consultar(EntidadeDominio entidade) {
@@ -164,6 +161,11 @@ public class Fachada implements IFachada {
         } else {
             return null;
         }
+    }
+
+    @Override
+    public Resultado excluir(EntidadeDominio entidade) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
 }

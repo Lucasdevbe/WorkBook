@@ -58,11 +58,11 @@
 <body>
     <div class="container">
         <div class="form">
-            <form action="/AplicacaoModelo/ConsultarPessoa" method="post">
+            <form action="/WorkBook/VisualizarPessoa" method="post">
                 <div class="input-container">
                     <label for="nome">Nome da Pessoa:</label>
                     <input type="text" id="nome" name="nome" class="input-field" required>
-                    <button type="submit" id="operacao" name="operacao" value="CONSULTAR" class="button">Pesquisar</button>
+                    <button type="submit" id="operacao" name="operacao" value="VISUALIZAR" class="button">Pesquisar</button>
                     <output id="msg" for="nome" >${msg}</output>
                 </div>
             </form>

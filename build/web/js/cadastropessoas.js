@@ -76,7 +76,7 @@ function selecionar(id) {
 
         // Criar os botao visualizar
         var btVisualizar = document.createElement("button");
-        btVisualizar.setAttribute("onClick", "location.href='FormProdutos.jsp?id=" + id + "&operacao=VISUALIZAR'");
+        btVisualizar.setAttribute("onClick", "location.href='FormProdutos.jsp?id=" + id + "&value=VISUALIZAR'");
         btVisualizar.appendChild(document.createTextNode("Visualizar"));
         btVisualizar.setAttribute("id", "consultar");
         btVisualizar.setAttribute("class", "save-button");
@@ -91,10 +91,11 @@ function selecionar(id) {
 
         // Criar os botao excluir
         var btExcluir = document.createElement("button");
-        btExcluir.setAttribute("onClick", "location.href='Produtos?id=" + id + "&operacao=EXCLUIR'");
+        btExcluir.setAttribute("onClick", "Excluir()");
         btExcluir.appendChild(document.createTextNode("Excluir"));
+        btExcluir.setAttribute("name", "operacao");
         btExcluir.setAttribute("id", "excluir");
-        btExcluir.setAttribute("class", "save-button");
+        btExcluir.setAttribute("class", "delete-button");
 
         // Incluir os botões na div interna
         interna.appendChild(btAlterar);
@@ -112,7 +113,20 @@ function selecionar(id) {
         btVs.setAttribute("onClick", "location.href='FormProdutos.jsp?id=" + id + "&operacao=VISUALIZAR'");
 
         var btEx = document.getElementById("excluir");
-        btEx.setAttribute("onClick", "location.href='Servlet?id=" + id + "&operacao=EXCLUIR'");
+        btEx.setAttribute("onClick", "location.href=/WorkBook/ExcluirPessoa?&id=" + id + "&operacao=EXCLUIR");
+    }
+    
+    
+}
+function Excluir() {
+    
+    var nome = document.getElementById("nome").value;
+    
+    if ( nome !== "") {
+        location.href = "/AplicacaoModelo/ExcluirPessoa?&nome=" + nome + "&operacao=Excluir";
+    } else {
+        var vari = document.getElementById("dataNascimento");
+        vari.focus();
     }
 }
 
