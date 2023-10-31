@@ -201,26 +201,21 @@ public class PessoaDAO extends AbstractJdbcDAO{
     public void excluir(EntidadeDominio entidade){
         openConnection();
         
+        Pessoa pessoa = (Pessoa) entidade;
         
-            PreparedStatement ps;            
-            String sql = "SELECT id_pessoa FROM tb_pessoa WHERE nome=?";
-            id_ = connection.prepareStatement(sql);
-            ps.setString(1, pessoa.getNome());
-            
-            
         PreparedStatement pst = null;
         StringBuilder sb = new StringBuilder();
         sb.append("DELETE FROM ");
         sb.append("tb_pessoa");
         sb.append(" WHERE ");
-        sb.append("id_pessoa");
+        sb.append("nome");
         sb.append("=");
         sb.append("?");
         try {
             
             connection.setAutoCommit(false);
             pst = connection.prepareStatement(sb.toString());
-            pst.setInt(1,entidade.getId());
+            pst.setString(1, pessoa.getNome());
             
             pst.executeUpdate();
             connection.commit();

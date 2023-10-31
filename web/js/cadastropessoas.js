@@ -123,7 +123,7 @@ function Excluir() {
     var nome = document.getElementById("nome").value;
     
     if ( nome !== "") {
-        location.href = "/AplicacaoModelo/ExcluirPessoa?&nome=" + nome + "&operacao=Excluir";
+        location.href = "/WorkBook/ExcluirPessoa?&nome=" + nome + "&operacao=EXCLUIR";
     } else {
         var vari = document.getElementById("dataNascimento");
         vari.focus();

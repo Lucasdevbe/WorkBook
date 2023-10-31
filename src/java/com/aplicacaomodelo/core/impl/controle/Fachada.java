@@ -165,7 +165,26 @@ public class Fachada implements IFachada {
 
     @Override
     public Resultado excluir(EntidadeDominio entidade) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+ resultado = new Resultado();
+        String nmClasse = entidade.getClass().getName();	
+
+        String msg = executarRegras(entidade, "EXCLUIR");
+        
+        if(msg == null){
+            IDAO dao = daos.get(nmClasse);
+
+            try {
+                List<EntidadeDominio> es = new ArrayList<>();
+                es.add(dao.excluir(entidade));
+                resultado.setEntidades(es);
+            } catch (SQLException e) {
+                e.printStackTrace();
+                resultado.setMsg("Não foi possível excluir o cadastro!");
+
+            }
+        }else{
+            resultado.setMsg(msg);
+        }
+        return resultado;    }
 
 }

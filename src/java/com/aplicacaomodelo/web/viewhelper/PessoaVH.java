@@ -28,32 +28,35 @@ public class PessoaVH implements IViewHelper {
         //Obtêm a operação executada
         String operacao = request.getParameter("operacao");
         Pessoa pessoa = new Pessoa();
-        if (operacao.equals("SALVAR")) {
-            String nome = request.getParameter("nome");
-            String data = request.getParameter("dtNascimento");
-            String cidade = request.getParameter("cidade");
-
-            pessoa.setNome(nome);
-            SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
-            try {
-                pessoa.setDtNascimento(formato.parse(data));
-            } catch (ParseException ex) {
-                Logger.getLogger(PessoaVH.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            
-            pessoa.setCidade(cidade);
-            
-        }else if(operacao.equals("VISUALIZAR")){
-         
-            String nome = request.getParameter("nome");
-            pessoa.setNome(nome);
-        
-           
-          
-        }else if(operacao.equals("EXCLUIR")){
-            
-            String nome = request.getParameter("nome");
-            pessoa.setNome(nome);
+        switch (operacao) {
+            case "SALVAR":
+                {
+                    String nome = request.getParameter("nome");
+                    String data = request.getParameter("dtNascimento");
+                    String cidade = request.getParameter("cidade");
+                    pessoa.setNome(nome);
+                    SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+                    try {
+                        pessoa.setDtNascimento(formato.parse(data));
+                    } catch (ParseException ex) {
+                        Logger.getLogger(PessoaVH.class.getName()).log(Level.SEVERE, null, ex);
+                    }       pessoa.setCidade(cidade);
+                    break;
+                }
+            case "VISUALIZAR":
+                {
+                    String nome = request.getParameter("nome");
+                    pessoa.setNome(nome);
+                    break;
+                }
+            case "EXCLUIR":
+                {
+                    String nome = request.getParameter("nome");
+                    pessoa.setNome(nome);
+                    break;
+                }
+            default:
+                break;
         }
 
         return pessoa;
