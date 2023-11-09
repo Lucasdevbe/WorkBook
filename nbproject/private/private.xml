@@ -11,15 +11,21 @@
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/java/com/aplicacaomodelo/web/interfaces/IViewHelper.java</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/web/css/cadastropessoas.css</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/java/com/aplicacaomodelo/web/command/ExcluirCommand.java</file>
+            <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/java/com/aplicacaomodelo/core/util/Conexao.java</file>
+            <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/java/com/aplicacaomodelo/domain/Livro.java</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/java/com/aplicacaomodelo/core/impl/controle/Fachada.java</file>
+            <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/java/com/aplicacaomodelo/core/impl/persistencia/LivroDAO.java</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/java/com/aplicacaomodelo/core/aplicacao/Resultado.java</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/web/cadastropessoas.jsp</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/conf/MANIFEST.MF</file>
+            <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/web/css/AreaVendedor.css</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/web/consultapessoa.jsp</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/java/com/aplicacaomodelo/web/viewhelper/LivroVH.java</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/java/com/aplicacaomodelo/core/interfaces/IDAO.java</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/java/com/aplicacaomodelo/core/interfaces/IStrategy.java</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/nbproject/private/private.xml</file>
+            <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/web/pesquisarLivros.jsp</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/java/com/aplicacaomodelo/web/servlet/Servlet.java</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/java/com/aplicacaomodelo/web/viewhelper/PessoaVH.java</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/web/js/cadastropessoas.js</file>
@@ -32,9 +38,11 @@
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/nbproject/project.properties</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/web/META-INF/context.xml</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/java/com/aplicacaomodelo/domain/EntidadeDominio.java</file>
+            <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/web/AreaVendedor.jsp</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/build/web/WEB-INF/web.xml</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/web/testeSidebar.html</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/java/com/aplicacaomodelo/core/impl/persistencia/PessoaDAO.java</file>
+            <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/web/Cadastrolivro.jsp</file>
         </group>
     </open-files>
 </project-private>
