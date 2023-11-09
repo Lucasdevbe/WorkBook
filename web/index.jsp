@@ -1,72 +1,87 @@
 <%-- 
     Document   : index
-    Created on : 22 de ago de 2023, 21:21:05
-    Author     : Caio Gustavo
+    Created on : 7 de nov. de 2023, 17:50:24
+    Author     : silva
 --%>
 
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>Página de Consulta</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            background-image: url("imagens/imgindex.png");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-        }
+    <head>
+        <link rel="stylesheet" href="css/index.css"/>
+        <header>
+        <h1>WorkBook</h1>
+            <nav>
+               <div class="menu-icon">&#9776;</div>
+                <ul class="nav-links">
+                    <li><a href="#">Página Inicial</a></li>
+                    <li><a href="#">Livros</a></li>
+                    <li><a href="#">Categorias</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <<li><a href="AreaVendedor.jsp">vendedor</a></li>
 
-        .container {
-           margin-top: 200px;
-           margin-right: 20px;
-            background-color: rgba(255, 255, 255, 0.8); /* Cor de fundo semi-transparente */
-            padding: 20px;
-            border-radius: 10px;
-        }
+                </ul>
+            </nav>
+        </header>
+    </head>
+    <body>
+        <main>
+    <section class="book">
+        <img src="livro1.jpg" alt="Livro 1">
+        <h2>Nome do Livro 1</h2>
+        <p>Autor do Livro 1</p>
+        <p class="price">R$ 25,00</p>
+        <button>Adicionar ao Carrinho</button>
+    </section>
 
-        .input-container {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-        }
+    <section class="book">
+        <img src="livro2.jpg" alt="Livro 2">
+        <h2>Nome do Livro 2</h2>
+        <p>Autor do Livro 2</p>
+        <p class="price">R$ 20,00</p>
+        <button>Adicionar ao Carrinho</button>
+    </section>
+    <section class="book">
+        <img src="livro2.jpg" alt="Livro 2">
+        <h2>Nome do Livro 2</h2>
+        <p>Autor do Livro 2</p>
+        <p class="price">R$ 20,00</p>
+        <button>Adicionar ao Carrinho</button>
+    </section>
+    <section class="book">
+        <img src="livro2.jpg" alt="Livro 2">
+        <h2>Nome do Livro 2</h2>
+        <p>Autor do Livro 2</p>
+        <p class="price">R$ 20,00</p>
+        <button>Adicionar ao Carrinho</button>
+    </section>
+    <section class="book">
+        <img src="livro2.jpg" alt="Livro 2">
+        <h2>Nome do Livro 2</h2>
+        <p>Autor do Livro 2</p>
+        <p class="price">R$ 20,00</p>
+        <button>Adicionar ao Carrinho</button>
+    </section>
+    <section class="book">
+        <img src="livro2.jpg" alt="Livro 2">
+        <h2>Nome do Livro 2</h2>
+        <p>Autor do Livro 2</p>
+        <p class="price">R$ 20,00</p>
+        <button>Adicionar ao Carrinho</button>
+    </section>
+    <section class="book">
+        <img src="livro2.jpg" alt="Livro 2">
+        <h2>Nome do Livro 2</h2>
+        <p>Autor do Livro 2</p>
+        <p class="price">R$ 20,00</p>
+        <button>Adicionar ao Carrinho</button>
+    </section>
+    <!-- Adicione mais sections para mais livros -->
 
-        .input-field {
-            width: 250px;
-            padding: 5px;
-            margin-top: 5px; /* Espaçamento entre label e input */
-        }
+</main>
 
-        .button {
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-            margin-top: 5px;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="form">
-            <form action="/WorkBook/VisualizarPessoa" method="post">
-                <div class="input-container">
-                    <label for="nome">Nome da Pessoa:</label>
-                    <input type="text" id="nome" name="nome" class="input-field" required>
-                    <button type="submit" id="operacao" name="operacao" value="VISUALIZAR" class="button">Pesquisar</button>
-                    <output id="msg" for="nome" >${msg}</output>
-                </div>
-            </form>
-        </div>
-    </div>
-</body>
+<footer>
+    <p>&copy; 2023 Livraria Online</p>
+</footer>
+    </body>
 </html>

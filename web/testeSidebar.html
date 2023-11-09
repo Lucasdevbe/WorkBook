@@ -1,0 +1,202 @@
+
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Livraria Online</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    height: 100%;
+}
+
+.sidebar {
+    width: 0;
+    height: 100%;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.sidebar-header {
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    border-bottom: 1px solid #444;
+}
+
+.sidebar-header h3 {
+    margin: 0;
+}
+
+.close-btn {
+    color: #fff;
+    border: none;
+    background: none;
+    font-size: 24px;
+    cursor: pointer;
+    outline: none;
+    float: right;
+}
+
+.sidebar-menu {
+    list-style: block;
+    padding: 0;
+}
+
+.sidebar-menu li {
+    padding: 10px;
+}
+
+.sidebar-menu a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.open-btn {
+    display: block;
+    cursor: pointer;
+    color: #fff;
+    background: none;
+    border: none;
+    font-size: 18px;
+    margin-left: 20px;
+}
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    color: #fff;
+}
+
+.sidebar-menu li {
+    padding: 10px;
+}
+
+.sidebar-menu a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.show {
+    width: 250px;
+}
+
+.content {
+    padding: 20px;
+    transition: margin-left 0.5s;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.open-btn {
+    display: block;
+    cursor: pointer;
+    color: #333;
+    background: none;
+    border: none;
+    font-size: 18px;
+    margin-left: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 250px;
+    }
+
+    .content {
+        margin-left: 250px;
+    }
+
+    .open-btn {
+        display: block;
+    }
+
+    .sidebar-menu {
+        text-align: center;
+    }
+
+    .sidebar-menu li {
+        border-bottom: 1px solid #444;
+    }
+}
+</style>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Livraria Online</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<button class="open-btn" onclick="toggleMenu()">&#9776; Menu</button>
+
+<div class="sidebar" id="sidebar">
+    <ul class="sidebar-menu">
+        <li><a href="#">Página Inicial</a></li>
+        <li><a href="#">Livros</a></li>
+        <li><a href="#">Categorias</a></li>
+        <li><a href="#">Contato</a></li>
+    </ul>
+</div>
+
+<div class="content">
+    <header>
+        <h1>Livraria Online</h1>
+    </header>
+    <!-- Conteúdo da página aqui -->
+</div>
+
+<script>
+    function toggleMenu() {
+        var sidebar = document.getElementById("sidebar");
+        sidebar.classList.toggle("show");
+    }
+</script>
+
+</body>
+</html>

@@ -5,11 +5,13 @@
 package com.aplicacaomodelo.core.impl.controle;
 
 import com.aplicacaomodelo.core.aplicacao.Resultado;
+import com.aplicacaomodelo.core.impl.persistencia.LivroDAO;
 import com.aplicacaomodelo.core.impl.persistencia.PessoaDAO;
 import com.aplicacaomodelo.core.interfaces.IDAO;
 import com.aplicacaomodelo.core.interfaces.IFachada;
 import com.aplicacaomodelo.core.interfaces.IStrategy;
 import com.aplicacaomodelo.domain.EntidadeDominio;
+import com.aplicacaomodelo.domain.Livro;
 import com.aplicacaomodelo.domain.Pessoa;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -45,8 +47,10 @@ public class Fachada implements IFachada {
         
         /* Criando instâncias dos DAOs a serem utilizados*/
         PessoaDAO pessoaDAO = new PessoaDAO();
+        LivroDAO livroDAO = new LivroDAO();
         
         daos.put(Pessoa.class.getName(), pessoaDAO);
+        daos.put(Livro.class.getName(), livroDAO);
     }
 
     @Override
@@ -165,26 +169,7 @@ public class Fachada implements IFachada {
 
     @Override
     public Resultado excluir(EntidadeDominio entidade) {
- resultado = new Resultado();
-        String nmClasse = entidade.getClass().getName();	
-
-        String msg = executarRegras(entidade, "EXCLUIR");
-        
-        if(msg == null){
-            IDAO dao = daos.get(nmClasse);
-
-            try {
-                List<EntidadeDominio> es = new ArrayList<>();
-                es.add(dao.excluir(entidade));
-                resultado.setEntidades(es);
-            } catch (SQLException e) {
-                e.printStackTrace();
-                resultado.setMsg("Não foi possível excluir o cadastro!");
-
-            }
-        }else{
-            resultado.setMsg(msg);
-        }
-        return resultado;    }
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 
 }

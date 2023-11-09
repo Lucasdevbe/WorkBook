@@ -5,6 +5,7 @@
 package com.aplicacaomodelo.core.impl.persistencia;
 
 import com.aplicacaomodelo.domain.EntidadeDominio;
+import com.aplicacaomodelo.domain.Livro;
 import com.aplicacaomodelo.domain.Pessoa;
 import java.sql.Connection;
 import java.sql.Date;
@@ -18,25 +19,24 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-
 /**
  *
- * @author Caio Gustavo
+ * @author silva
  */
-public class PessoaDAO extends AbstractJdbcDAO{
-
-    public PessoaDAO(Connection connection, String table, String idTable) {
+public class LivroDAO extends AbstractJdbcDAO {
+    
+     public LivroDAO(Connection connection, String table, String idTable) {
         super(connection, table, idTable);
     }
     
-     public PessoaDAO(String table, String idTable) {
-        super("TB_PESSOA", "ID_PESSOA");
+     public LivroDAO(String table, String idTable) {
+        super("TB_LIVRO", "ID_LIVRO");
     }
-    public PessoaDAO(Connection cx){
-        super(cx, "TB_PESSOA", "ID_PESSOA");
+    public LivroDAO(Connection cx){
+        super(cx, "TB_LIVRO", "ID_LIVRO");
     }
-    public PessoaDAO(){
-        super("TB_PESSOA", "ID_PESSOA");
+    public LivroDAO(){
+        super("TB_LIVRO", "ID_LIVRO");
     }
 
     @Override
@@ -45,35 +45,38 @@ public class PessoaDAO extends AbstractJdbcDAO{
             openConnection();
         }
         PreparedStatement pst = null;
-        Pessoa p = (Pessoa) entidade;
+        Livro p = (Livro) entidade;
         
         try{
             connection.setAutoCommit(false);
                         
             StringBuilder sql = new StringBuilder();
-            sql.append("INSERT INTO tb_pessoa (nome, dt_nascimento, cidade) VALUES (?,?,?)");
+            sql.append("INSERT INTO tb_Livros (nome, autor, editora, ano) VALUES (?,?,?,?)");
             
             
             pst = connection.prepareStatement(sql.toString(), Statement.RETURN_GENERATED_KEYS);
            
             pst.setString(1, p.getNome());            
-           
+            pst.setString(2, p.getAutor()); 
+            pst.setString(3, p.getEditora()); 
             
-            Date time = new Date(p.getDtNascimento().getTime());
-            pst.setDate(2,  time);
+            pst.setInt(4, p.getAno()); 
+            
+            
+           
 
           
             
-            pst.setString(3, p.getCidade());
+            
            
             pst.executeUpdate();
             
             ResultSet rs = pst.getGeneratedKeys();
-            int idPessoa=0;
+            int idLivro=0;
             if(rs.next())
-                idPessoa = rs.getInt(1);
+                idLivro = rs.getInt(1);
             
-            p.setId(idPessoa);            
+            p.setId(idLivro);            
       
             
             connection.commit();
@@ -234,6 +237,4 @@ public class PessoaDAO extends AbstractJdbcDAO{
         }
         
     }
-
- 
 }
