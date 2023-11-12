@@ -60,3 +60,15 @@ header {
     padding-bottom: 20px;
     margin-bottom: 20px;
 }
+.table-container {
+    max-height: 300px; /* Altura máxima da tabela */
+    width: 100%;
+    overflow: auto; /* Adiciona barra de rolagem quando necessário */
+}
+
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}

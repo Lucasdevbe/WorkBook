@@ -87,6 +87,8 @@ public class Fachada implements IFachada {
     public Resultado alterar(EntidadeDominio entidade) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+    
+    
 
    
 
@@ -169,7 +171,38 @@ public class Fachada implements IFachada {
 
     @Override
     public Resultado excluir(EntidadeDominio entidade) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        
+       resultado = new Resultado();
+        String nmClasse = entidade.getClass().getName();	
+
+        String msg = executarRegras(entidade, "EXCLUIR");
+        
+        if(msg == null){
+            //IDAO dao = daos.get(nmClasse);
+            IDAO dao = daos.get(nmClasse);
+            try {
+                dao.excluir(entidade);
+                List<EntidadeDominio> entidades = new ArrayList<EntidadeDominio>();
+                entidades.add(entidade);
+                resultado.setEntidades(entidades);
+                
+            } catch (SQLException e) {
+                
+                e.printStackTrace();
+                resultado.setMsg("Não foi possível realizar o registro!");
+                
+            }
+        }
+        else{
+            resultado.setMsg(msg);	            
+        }
+        
+        return resultado;
     }
 
+    
+
+   
 }
+
+    

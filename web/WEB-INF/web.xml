@@ -10,6 +10,9 @@
         <url-pattern>/SalvarPessoa</url-pattern>
         <url-pattern>/ExcluirPessoa</url-pattern>
         <url-pattern>/SalvarLivro</url-pattern>
+       <url-pattern>/ConsultarLivro</url-pattern>
+       <url-pattern>/VisualizarLivro</url-pattern>
+       <url-pattern>/ExcluirLivro</url-pattern>
     </servlet-mapping>
     
 </web-app>

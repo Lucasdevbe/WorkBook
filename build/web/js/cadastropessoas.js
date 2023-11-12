@@ -4,6 +4,19 @@
  */
 var anterior = 0;
 
+function consultar(){
+        location.href = "/WorkBook/ConsultarLivro?&operacao=CONSULTAR";
+}
+
+function excluir(id){
+    if (anterior === 0) {
+        anterior = id;
+    }
+    
+        anterior = id;
+        location.href = "/WorkBook/ExcluirLivro?id=" + anterior + "&operacao=EXCLUIR";
+}
+
 function salvarNovo() {
 
     var nome = document.getElementById("nome").value;
@@ -66,6 +79,7 @@ function selecionar(id) {
     linha.setAttribute("style", "font-weight:bold");
 
     anterior = id;
+    var nome = document.getElementById("nome").value;
     // Div principal onde as divs internas serão criadas
     var div = document.getElementById("divBotoes");
 
@@ -76,7 +90,7 @@ function selecionar(id) {
 
         // Criar os botao visualizar
         var btVisualizar = document.createElement("button");
-        btVisualizar.setAttribute("onClick", "location.href='FormProdutos.jsp?id=" + id + "&value=VISUALIZAR'");
+        btVisualizar.setAttribute("onClick", "location.href='FormProdutos.jsp?id=" + id + "&value=CONSULTAR'");
         btVisualizar.appendChild(document.createTextNode("Visualizar"));
         btVisualizar.setAttribute("id", "consultar");
         btVisualizar.setAttribute("class", "save-button");
@@ -91,7 +105,7 @@ function selecionar(id) {
 
         // Criar os botao excluir
         var btExcluir = document.createElement("button");
-        btExcluir.setAttribute("onClick", "Excluir()");
+        btExcluir.setAttribute("onclick", excluir());
         btExcluir.appendChild(document.createTextNode("Excluir"));
         btExcluir.setAttribute("name", "operacao");
         btExcluir.setAttribute("id", "excluir");
@@ -109,26 +123,16 @@ function selecionar(id) {
         var btAt = document.getElementById("alterar");
         btAt.setAttribute("onClick", "location.href='FormProdutos.jsp?id=" + id + "&operacao=ALTERAR'");
 
-        var btVs = document.getElementById("consultar");
-        btVs.setAttribute("onClick", "location.href='FormProdutos.jsp?id=" + id + "&operacao=VISUALIZAR'");
+        var btCo = document.getElementById("consultar");
+        btCo.setAttribute("onClick", "location.href='AreaVendedor.jsp?id=" + id + "&operacao=CONSULTAR'");
 
         var btEx = document.getElementById("excluir");
-        btEx.setAttribute("onClick", "location.href=/WorkBook/ExcluirPessoa?&id=" + id + "&operacao=EXCLUIR");
+        btEx.setAttribute("onClick", "location.href=/WorkBook/ExcluirPessoa?id=" + id + "&operacao=EXCLUIR");
     }
     
     
 }
-function Excluir() {
-    
-    var nome = document.getElementById("nome").value;
-    
-    if ( nome !== "") {
-        location.href = "/WorkBook/ExcluirPessoa?&nome=" + nome + "&operacao=EXCLUIR";
-    } else {
-        var vari = document.getElementById("dataNascimento");
-        vari.focus();
-    }
-}
+
 
 
 

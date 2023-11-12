@@ -23,6 +23,7 @@ public class Pessoa extends EntidadeDominio{
     }
 
     public Pessoa(int i, String nome, String cidade, Date date) {
+        
         setId(i);
         this.nome = nome;
         this.cidade = cidade;
@@ -76,3 +77,4 @@ public class Pessoa extends EntidadeDominio{
     }
         
 }
+

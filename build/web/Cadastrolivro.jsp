@@ -22,20 +22,23 @@
         <div class="container">
             <div class="form-container">
                 <form action="/WorkBook/SalvarLivro" method="post">
+                    <divi>
                     <label name="nome" >Nome Do Livro</label>
                     <input type="text" id="nome" name="nome" class="form-field"  required>
                     
                     <label name="Autor" >Autor</label>
                     <input type="text" id="Autor" name="autor" class="form-field" required>
-                    
+                    </div>
+                    <div>
                     <label name="nome" >Editora</label>
                     <input type="text" id="Editora" name="editora" class="form-field" required>
                     
-                    <input type="number" id="ano" name="ano" class="form-field" placeholder="Ano do Livro" required>
-                    
-                    <input type="submit" name="operacao" id="operacao" value="SALVAR" >
+                    <label name="nome" >Ano do livro</label>
+                    <input type="number" id="ano" name="ano" class="form-field"  required>
+                    </div>
+            <input class="sa" type="submit" name="operacao" id="operacao" value="SALVAR" >
                 </form>
-            </div>
+            
 
             <h2>Registros de Pessoas</h2>
 
@@ -62,7 +65,8 @@
                     </c:forEach>
                 </table>
             </div>
-        </div>
+            </div>
+       
     </body>
 </html>
 

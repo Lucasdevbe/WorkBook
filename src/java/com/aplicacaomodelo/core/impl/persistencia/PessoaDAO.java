@@ -110,7 +110,7 @@ public class PessoaDAO extends AbstractJdbcDAO{
         List<EntidadeDominio> pessoas = new ArrayList<>();
         
         try{
-            String sql = "SELECT * FROM tb_pessoa";
+            String sql = "SELECT * FROM tb_Livros";
             
             ps = connection.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();

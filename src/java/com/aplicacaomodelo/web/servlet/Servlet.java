@@ -59,6 +59,9 @@ public class Servlet extends HttpServlet {
         vhs.put("/WorkBook/VisualizarPessoa", new PessoaVH());
         vhs.put("/WorkBook/ExcluirPessoa", new PessoaVH());
         vhs.put("/WorkBook/SalvarLivro", new LivroVH());
+        vhs.put("/WorkBook/ConsultarLivro", new LivroVH());
+        vhs.put("/WorkBook/VisualizarLivro", new LivroVH());
+        vhs.put("/WorkBook/ExcluirLivro", new LivroVH());
     }
 
     /**
@@ -84,7 +87,7 @@ public class Servlet extends HttpServlet {
         IViewHelper vh = vhs.get(uri);
 
         //O viewhelper retorna a entidade especifica para a tela que chamou esta servlet
-        EntidadeDominio entidade = vh.getEntidade(request);
+         EntidadeDominio entidade = vh.getEntidade(request);
 
         //Obtêm o command para executar a respectiva operação
         ICommand command = commands.get(operacao);

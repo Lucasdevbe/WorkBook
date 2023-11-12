@@ -55,6 +55,12 @@ public class PessoaVH implements IViewHelper {
                     pessoa.setNome(nome);
                     break;
                 }
+            case "CONSULTAR":
+                {
+                    String nome = request.getParameter("nome");
+                    pessoa.setNome(nome);
+                    break;
+                }
             default:
                 break;
         }

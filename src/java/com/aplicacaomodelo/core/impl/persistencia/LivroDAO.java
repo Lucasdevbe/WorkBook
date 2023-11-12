@@ -4,6 +4,7 @@
  */
 package com.aplicacaomodelo.core.impl.persistencia;
 
+import com.aplicacaomodelo.core.aplicacao.Resultado;
 import com.aplicacaomodelo.domain.EntidadeDominio;
 import com.aplicacaomodelo.domain.Livro;
 import com.aplicacaomodelo.domain.Pessoa;
@@ -24,6 +25,8 @@ import java.util.List;
  * @author silva
  */
 public class LivroDAO extends AbstractJdbcDAO {
+
+    
     
      public LivroDAO(Connection connection, String table, String idTable) {
         super(connection, table, idTable);
@@ -63,12 +66,6 @@ public class LivroDAO extends AbstractJdbcDAO {
             pst.setInt(4, p.getAno()); 
             
             
-           
-
-          
-            
-            
-           
             pst.executeUpdate();
             
             ResultSet rs = pst.getGeneratedKeys();
@@ -102,120 +99,29 @@ public class LivroDAO extends AbstractJdbcDAO {
     public void alterar(EntidadeDominio entidade) throws SQLException {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-
-    @Override
-    public List<EntidadeDominio> consultar(EntidadeDominio entidade) throws SQLException {
-        if(connection == null){
-            openConnection();
-        }
-        PreparedStatement ps = null;
-        
-        List<EntidadeDominio> pessoas = new ArrayList<>();
-        
-        try{
-            String sql = "SELECT * FROM tb_pessoa";
-            
-            ps = connection.prepareStatement(sql);
-            ResultSet rs = ps.executeQuery();
-            
-            while (rs.next()) {
-                Pessoa p = new Pessoa();
-                
-                Calendar cal = GregorianCalendar.getInstance();
-                cal.setTime(rs.getDate("dtNascimento"));
-                   
-                p.setDtNascimento(cal.getTime());
-                
-                p.setId(rs.getInt("id_pessoa"));
-                p.setNome(rs.getString("nome"));
-                p.setCidade(rs.getString("cidade"));
-                
-                pessoas.add(p);
-            }
-            
-            
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                ps.close();
-                if(ctrlTransaction){
-                    connection.close();
-                }
-            } catch (SQLException e){
-                e.printStackTrace();
-            }
-        }
-        return pessoas;
-    }
-
-    @Override
-    public EntidadeDominio visualizar(EntidadeDominio entidade) throws SQLException {
-        
-        if(connection == null){
-            openConnection();
-        }
-        Pessoa pessoa = (Pessoa) entidade;
-        pessoa.setId(0);
-        try {
-            
-            PreparedStatement ps;            
-            String sql = "SELECT * FROM tb_pessoa WHERE nome=?";
-            ps = connection.prepareStatement(sql);
-            ps.setString(1, pessoa.getNome());
-            
-            ResultSet rs = ps.executeQuery();
-            
-            if(rs.next()){
-                pessoa.setId(rs.getInt("id_pessoa"));
-                pessoa.setNome(rs.getString("nome"));
-                pessoa.setCidade(rs.getString("cidade"));
-                
-                                
-                pessoa.setDtNascimento(rs.getDate("dt_nascimento"));
-                
-             
-            }
-                       
-            ps.close();
-            rs.close();
-            if(ctrlTransaction){
-                connection.close();
-            }
-            
-            
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        
-        return pessoa;
-    } 
-
-    private Time getTime() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-
+    
+    
  @Override
     public void excluir(EntidadeDominio entidade){
         openConnection();
         
-        Pessoa pessoa = (Pessoa) entidade;
+        Livro livro = (Livro) entidade;
         
         PreparedStatement pst = null;
         StringBuilder sb = new StringBuilder();
         sb.append("DELETE FROM ");
-        sb.append("tb_pessoa");
+        sb.append("tb_Livros");
         sb.append(" WHERE ");
-        sb.append("nome");
+        sb.append("id_pessoa");
         sb.append("=");
         sb.append("?");
         try {
             
             connection.setAutoCommit(false);
-            pst = connection.prepareStatement(sb.toString());
-            pst.setString(1, pessoa.getNome());
-            
+            pst = connection.prepareStatement(sb.toString(),Statement.RETURN_GENERATED_KEYS);
+ 
+            pst.setInt(1, livro.getId()); 
+    
             pst.executeUpdate();
             connection.commit();
         } catch (SQLException e) {
@@ -237,4 +143,103 @@ public class LivroDAO extends AbstractJdbcDAO {
         }
         
     }
+
+    @Override
+    public List<EntidadeDominio> consultar(EntidadeDominio entidade) throws SQLException {
+        if(connection == null){
+            openConnection();
+        }
+        PreparedStatement ps = null;
+        
+        List<EntidadeDominio> Livro = new ArrayList<>();
+        
+        try{
+            String sql = "SELECT * FROM tb_Livros";
+            
+            ps = connection.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            
+            while (rs.next()) {
+                
+                 Livro p = new Livro();
+                          
+                       
+                p.setId(rs.getInt("id_pessoa"));
+                p.setNome(rs.getString("nome"));
+                p.setAutor(rs.getString("autor"));
+                p.setEditora(rs.getString("editora"));
+                
+                int ano = p.getAno();                       
+                p.setAno(rs.getInt("ano"));
+                
+                Livro.add(p);
+            }
+            
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                ps.close();
+                if(ctrlTransaction){
+                    connection.close();
+                }
+            } catch (SQLException e){
+                e.printStackTrace();
+            }
+        }
+        return Livro;
+    }
+
+    @Override
+    public EntidadeDominio visualizar(EntidadeDominio entidade) throws SQLException {
+        
+        if(connection == null){
+            openConnection();
+        }
+        Livro livro = (Livro) entidade;
+        livro.setId(0);
+        try {
+            
+            PreparedStatement ps;            
+            String sql = "SELECT * FROM tb_Livros WHERE nome=?";
+            ps = connection.prepareStatement(sql);
+            
+            ps.setString(1,livro.getNome());
+            
+            try (ResultSet rs = ps.executeQuery()) {
+                if(rs.next()){
+                    
+                    
+                    livro.setNome(rs.getString("nome"));
+                    livro.setAutor(rs.getString("autor"));
+                    livro.setEditora(rs.getString("editora"));
+                    
+                    livro.setAno(rs.getInt("ano"));
+                    
+                    
+                    
+                    
+                    
+                }
+                
+                ps.close();
+            }
+            if(ctrlTransaction){
+                connection.close();
+            }
+            
+            
+        } catch (SQLException e) {
+        }
+        
+        return livro;
+    } 
+
+    private Time getTime() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+
+ 
 }

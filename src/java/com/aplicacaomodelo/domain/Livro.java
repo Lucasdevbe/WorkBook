@@ -12,6 +12,10 @@ import java.util.Date;
  */
 public class Livro extends EntidadeDominio {
 
+    public static void add(Livro p) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
     private String nome;
     private String autor;
     private String editora;
