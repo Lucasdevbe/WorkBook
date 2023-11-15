@@ -7,12 +7,14 @@ package com.aplicacaomodelo.core.impl.controle;
 import com.aplicacaomodelo.core.aplicacao.Resultado;
 import com.aplicacaomodelo.core.impl.persistencia.LivroDAO;
 import com.aplicacaomodelo.core.impl.persistencia.PessoaDAO;
+import com.aplicacaomodelo.core.impl.persistencia.VendedorDAO;
 import com.aplicacaomodelo.core.interfaces.IDAO;
 import com.aplicacaomodelo.core.interfaces.IFachada;
 import com.aplicacaomodelo.core.interfaces.IStrategy;
 import com.aplicacaomodelo.domain.EntidadeDominio;
 import com.aplicacaomodelo.domain.Livro;
 import com.aplicacaomodelo.domain.Pessoa;
+import com.aplicacaomodelo.domain.Vendedor;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -48,9 +50,11 @@ public class Fachada implements IFachada {
         /* Criando instâncias dos DAOs a serem utilizados*/
         PessoaDAO pessoaDAO = new PessoaDAO();
         LivroDAO livroDAO = new LivroDAO();
+        VendedorDAO vendedorDAO = new VendedorDAO();
         
         daos.put(Pessoa.class.getName(), pessoaDAO);
         daos.put(Livro.class.getName(), livroDAO);
+        daos.put(Vendedor.class.getName(), vendedorDAO );
     }
 
     @Override

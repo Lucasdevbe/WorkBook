@@ -4,7 +4,6 @@
  */
 package com.aplicacaomodelo.domain;
 
-import java.util.Date;
 
 /**
  *

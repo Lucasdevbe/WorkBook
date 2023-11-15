@@ -9,10 +9,14 @@
         <url-pattern>/VisualizarPessoa</url-pattern>
         <url-pattern>/SalvarPessoa</url-pattern>
         <url-pattern>/ExcluirPessoa</url-pattern>
+        
         <url-pattern>/SalvarLivro</url-pattern>
        <url-pattern>/ConsultarLivro</url-pattern>
        <url-pattern>/VisualizarLivro</url-pattern>
        <url-pattern>/ExcluirLivro</url-pattern>
+       
+       <url-pattern>/SalvarVendedor</url-pattern>
+       <url-pattern>/ConsultarVendedor</url-pattern>
     </servlet-mapping>
     
 </web-app>

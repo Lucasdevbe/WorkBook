@@ -4,17 +4,31 @@
  */
 var anterior = 0;
 
-function consultar(){
-        location.href = "/WorkBook/ConsultarLivro?&operacao=CONSULTAR";
+
+function EX_CON(id) {
+    sid = id;
+
+    
+    consultar();
+    excluir(sid);
+
 }
 
-function excluir(id){
+function consultar() {
+    location.href = "/WorkBook/ConsultarLivro?&operacao=CONSULTAR";
+    consultar().break;
+}
+function excluir(sid) {
     if (anterior === 0) {
-        anterior = id;
+        anterior = sid;
     }
+    var alerta = document.createElement("p");
+    alerta.appendChild(document.createTextNode("Visualizar"));
+    anterior = sid;
+    location.href = "/WorkBook/ExcluirLivro?id=" + anterior + "&operacao=EXCLUIR";
     
-        anterior = id;
-        location.href = "/WorkBook/ExcluirLivro?id=" + anterior + "&operacao=EXCLUIR";
+    
+    
 }
 
 function salvarNovo() {
@@ -105,7 +119,6 @@ function selecionar(id) {
 
         // Criar os botao excluir
         var btExcluir = document.createElement("button");
-        btExcluir.setAttribute("onclick", excluir());
         btExcluir.appendChild(document.createTextNode("Excluir"));
         btExcluir.setAttribute("name", "operacao");
         btExcluir.setAttribute("id", "excluir");
@@ -129,8 +142,8 @@ function selecionar(id) {
         var btEx = document.getElementById("excluir");
         btEx.setAttribute("onClick", "location.href=/WorkBook/ExcluirPessoa?id=" + id + "&operacao=EXCLUIR");
     }
-    
-    
+
+
 }
 
 

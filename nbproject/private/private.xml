@@ -4,6 +4,7 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/java/com/aplicacaomodelo/core/impl/persistencia/AbstractJdbcDAO.java</file>
+            <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/web/Login.jsp</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/java/com/aplicacaomodelo/domain/Pessoa.java</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/java/com/aplicacaomodelo/core/interfaces/IFachada.java</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/java/com/aplicacaomodelo/web/command/ConsultarCommand.java</file>
@@ -12,11 +13,13 @@
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/web/css/cadastropessoas.css</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/java/com/aplicacaomodelo/web/command/ExcluirCommand.java</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/java/com/aplicacaomodelo/core/util/Conexao.java</file>
+            <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/web/css/login.css</file>
+            <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/web/css/CadastroVendedor.css</file>
+            <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/java/com/aplicacaomodelo/web/viewhelper/VendedorVH.java</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/java/com/aplicacaomodelo/domain/Livro.java</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/java/com/aplicacaomodelo/core/impl/controle/Fachada.java</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/java/com/aplicacaomodelo/core/impl/persistencia/LivroDAO.java</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/java/com/aplicacaomodelo/core/aplicacao/Resultado.java</file>
-            <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/web/cadastropessoas.jsp</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/conf/MANIFEST.MF</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/web/css/AreaVendedor.css</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/web/consultapessoa.jsp</file>
@@ -33,10 +36,13 @@
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/nbproject/ant-deploy.xml</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/web/css/index.css</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/java/com/aplicacaomodelo/web/command/SalvarCommand.java</file>
+            <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/java/com/aplicacaomodelo/core/impl/persistencia/VendedorDAO.java</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/java/com/aplicacaomodelo/web/command/VisualizarCommand.java</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/nbproject/project.xml</file>
+            <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/java/com/aplicacaomodelo/domain/Vendedor.java</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/java/com/aplicacaomodelo/web/command/AbstractCommand.java</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/nbproject/project.properties</file>
+            <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/web/CadastroVendedor.jsp</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/web/META-INF/context.xml</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/java/com/aplicacaomodelo/domain/EntidadeDominio.java</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/web/AreaVendedor.jsp</file>

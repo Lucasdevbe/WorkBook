@@ -18,7 +18,7 @@
                     <li><a href="#">Livros</a></li>
                     <li><a href="#">Categorias</a></li>
                     <li><a href="#">Contato</a></li>
-                    <li><a href="AreaVendedor.jsp">vendedor</a></li>
+                    <li><a href="Login.jsp">vendedor</a></li>
 
                 </ul>
             </nav>

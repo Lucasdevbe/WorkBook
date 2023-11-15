@@ -4,6 +4,7 @@
  */
 package com.aplicacaomodelo.web.viewhelper;
 
+import com.aplicacaomodelo.web.servlet.Servlet;
 import com.aplicacaomodelo.core.aplicacao.Resultado;
 import com.aplicacaomodelo.core.util.Conexao;
 import com.aplicacaomodelo.domain.EntidadeDominio;
@@ -51,7 +52,7 @@ public class LivroVH implements IViewHelper {
                 break;
             }
             case "EXCLUIR": {
-                
+
                 String sid = request.getParameter("id");
                 int id = Integer.parseInt(sid);
                 livro.setId(id);
@@ -74,8 +75,27 @@ public class LivroVH implements IViewHelper {
 
         request.setAttribute("listaLivros", resultado.getEntidades());
 
-        request.getRequestDispatcher("AreaVendedor.jsp").forward(request, response);
+        String operacao = request.getParameter("operacao");
+        
+        if ("salvar".equals(operacao)) {
+            
+            request.getRequestDispatcher("CadastroLivro.jsp").forward(request, response);
+            
+        } else if ("CONSULTAR".equals(operacao)) {
+            request.getRequestDispatcher("AreaVendedor.jsp").forward(request, response);
+        }
+{
+            
+        }
 
     }
-
 }
+
+    
+    
+
+
+        
+    
+
+

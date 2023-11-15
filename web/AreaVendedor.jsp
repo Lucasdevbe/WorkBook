@@ -15,7 +15,7 @@
     
     <script type="text/javascript" src="js/cadastropessoas.js"></script>
 </head>
-<body >
+<body onload="consultar()" >
     <header>
         <h1>Área do Vendedor</h1>
     </header>
@@ -23,15 +23,20 @@
     <div class="container">
         <aside class="sidebar">
             <h2>Menu</h2>
+            
+            <c:forEach   var="vendedor" items="${listaVendedor}" varStatus="id">
+                <p>${vendedor.nome}</p>
+            </c:forEach>
+            
             <ul>
-                <button onclick="consultar()" type="submit" id="operacao" name="operacao" value="CONSULTAR" class="button">MEUS lIVROS</button>
+                <button onclick="consultar()"  type="submit" id="operacao" name="operacao" value="CONSULTAR" class="button">MEUS lIVROS</button>
                 <li><a href="Cadastrolivro.jsp">Adicionar Novo Livro</a></li>
                 <li><a href="#">Estatísticas de Vendas</a></li>
                 <!-- Adicione mais opções de menu conforme necessário -->
             </ul>
         </aside>
 
-        <main class="main-content">
+        <main class="main-content" onload="consultar()">
             <section class="my-books">
                 
                 <div class="table-container">
@@ -45,7 +50,7 @@
                         </div>
                     </form>
                         
-          <div class="table-container">
+                        <div class="table-container" ">
                 <table>
                     <tr>
                         <th>Nome</th>
@@ -53,7 +58,7 @@
                         <th>Editora</th>
                         <th>ano</th>
                     </tr>
-                    <c:forEach var="livro" items="${listaLivros}" varStatus="id">
+                    <c:forEach   var="livro" items="${listaLivros}" varStatus="id">
                         <tr id="${livro.id}">
                             <td onclick="selecionar(${livro.id})">${livro.nome}</td>
                             
@@ -63,7 +68,7 @@
                             <td onclick="selecionar(${livro.id})">${livro.ano}</td>
                             <td class="action-buttons">
                                 <button class="save-button">Editar</button>
-                                <button onclick="excluir(${livro.id})" class="delete-button">Excluir</button>
+                                <button onclick="excluir(${livro.id})"  class="delete-button">Excluir</button>
                             </td>
                         </tr>
                     </c:forEach>

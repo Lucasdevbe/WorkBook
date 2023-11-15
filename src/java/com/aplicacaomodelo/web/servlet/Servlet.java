@@ -15,6 +15,7 @@ import com.aplicacaomodelo.web.interfaces.ICommand;
 import com.aplicacaomodelo.web.interfaces.IViewHelper;
 import com.aplicacaomodelo.web.viewhelper.LivroVH;
 import com.aplicacaomodelo.web.viewhelper.PessoaVH;
+import com.aplicacaomodelo.web.viewhelper.VendedorVH;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -58,10 +59,15 @@ public class Servlet extends HttpServlet {
         vhs.put("/WorkBook/SalvarPessoa", new PessoaVH());
         vhs.put("/WorkBook/VisualizarPessoa", new PessoaVH());
         vhs.put("/WorkBook/ExcluirPessoa", new PessoaVH());
+        
         vhs.put("/WorkBook/SalvarLivro", new LivroVH());
         vhs.put("/WorkBook/ConsultarLivro", new LivroVH());
         vhs.put("/WorkBook/VisualizarLivro", new LivroVH());
         vhs.put("/WorkBook/ExcluirLivro", new LivroVH());
+        
+        vhs.put("/WorkBook/SalvarVendedor", new VendedorVH());
+        vhs.put("/WorkBook/ConsultarVendedor", new VendedorVH());
+        
     }
 
     /**

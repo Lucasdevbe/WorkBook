@@ -72,10 +72,11 @@ public class PessoaVH implements IViewHelper {
     @Override
     public void setView(Resultado resultado, HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
-        request.setAttribute("listaPessoas", resultado.getEntidades());
+        request.setAttribute("listaVendedor", resultado.getEntidades());
 
         request.getRequestDispatcher("cadastropessoas.jsp").forward(request, response);
 
     }
 
 }
+        
