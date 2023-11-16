@@ -5,83 +5,48 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<<script src="js/index.js"></script>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
-<html>
+
     <head>
         <link rel="stylesheet" href="css/index.css"/>
-        <header>
+        <link rel="stylesheet" href="css/footer.css"/>
+    <header>
         <h1>WorkBook</h1>
-            <nav>
-               <div class="menu-icon">&#9776;</div>
-                <ul class="nav-links">
-                    <li><a href="#">Página Inicial</a></li>
-                    <li><a href="#">Livros</a></li>
-                    <li><a href="#">Categorias</a></li>
-                    <li><a href="#">Contato</a></li>
-                    <li><a href="Login.jsp">vendedor</a></li>
+        <nav>
+            <div class="menu-icon">&#9776;</div>
+            <ul class="nav-links">
+                <li><a href="AreaVendedor.jsp">Página Inicial</a></li>
+                <li><a href="#">Livros</a></li>
+                <li><a href="#">Categorias</a></li>
+                <li><a href="#">Contato</a></li>
+                <li><a href="Login.jsp">vendedor</a></li>
 
-                </ul>
-            </nav>
-        </header>
-    </head>
-    <body>
-        <main>
-    <section class="book">
-        <img src="livro1.jpg" alt="Livro 1">
-        <h2>Nome do Livro 1</h2>
-        <p>Autor do Livro 1</p>
-        <p class="price">R$ 25,00</p>
-        <button>Adicionar ao Carrinho</button>
-    </section>
+            </ul>
+        </nav>
+    </header>
+</head>
+<body onload="ListarLivros()">
+    <main>
+        <c:forEach var="livros" items="${listaLivros}" varStatus="id">
+            <div id="livros">
+                <section class="book">
+                    <img src="livro1.jpg" alt="Livro 1">
+                    <h2>${livros.nome}</h2>
+                    <p>Autor do Livro 1</p>
+                    <p class="price">R$ 25,00</p>
+                    <button>Adicionar ao Carrinho</button>
+                </section>
+            </div>
 
-    <section class="book">
-        <img src="livro2.jpg" alt="Livro 2">
-        <h2>Nome do Livro 2</h2>
-        <p>Autor do Livro 2</p>
-        <p class="price">R$ 20,00</p>
-        <button>Adicionar ao Carrinho</button>
-    </section>
-    <section class="book">
-        <img src="livro2.jpg" alt="Livro 2">
-        <h2>Nome do Livro 2</h2>
-        <p>Autor do Livro 2</p>
-        <p class="price">R$ 20,00</p>
-        <button>Adicionar ao Carrinho</button>
-    </section>
-    <section class="book">
-        <img src="livro2.jpg" alt="Livro 2">
-        <h2>Nome do Livro 2</h2>
-        <p>Autor do Livro 2</p>
-        <p class="price">R$ 20,00</p>
-        <button>Adicionar ao Carrinho</button>
-    </section>
-    <section class="book">
-        <img src="livro2.jpg" alt="Livro 2">
-        <h2>Nome do Livro 2</h2>
-        <p>Autor do Livro 2</p>
-        <p class="price">R$ 20,00</p>
-        <button>Adicionar ao Carrinho</button>
-    </section>
-    <section class="book">
-        <img src="livro2.jpg" alt="Livro 2">
-        <h2>Nome do Livro 2</h2>
-        <p>Autor do Livro 2</p>
-        <p class="price">R$ 20,00</p>
-        <button>Adicionar ao Carrinho</button>
-    </section>
-    <section class="book">
-        <img src="livro2.jpg" alt="Livro 2">
-        <h2>Nome do Livro 2</h2>
-        <p>Autor do Livro 2</p>
-        <p class="price">R$ 20,00</p>
-        <button>Adicionar ao Carrinho</button>
-    </section>
-    <!-- Adicione mais sections para mais livros -->
+            </div><!-- Adicione mais sections para mais livros -->
+    </c:forEach>
+    </main>
 
-</main>
+    <footer>
+        <p>&copy; 2023 Livraria Online</p>
+    </footer>
+</body>
 
-<footer>
-    <p>&copy; 2023 Livraria Online</p>
-</footer>
-    </body>
-</html>

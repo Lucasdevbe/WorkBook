@@ -19,18 +19,28 @@ public class Livro extends EntidadeDominio {
     private String autor;
     private String editora;
     private int ano;
+    private String descricao;
 
     public Livro() {
 
     }
 
-    public Livro(int i, String nome, String autor, String editora, int ano) {
+    public Livro(int i, String nome, String autor, String editora, int ano , String descricao) {
 
         setId(i);
         this.nome = nome;
         this.autor = autor;
         this.editora = editora;
         this.ano = ano;
+        this.descricao = descricao;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
     /**

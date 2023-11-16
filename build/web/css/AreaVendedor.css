@@ -56,15 +56,20 @@ header {
 }
 
 .my-books {
-    border-bottom: 1px solid #ccc;
+    
     padding-bottom: 20px;
     margin-bottom: 20px;
 }
 .table-container {
-    max-height: 300px; /* Altura máxima da tabela */
+     /* Altura máxima da tabela */
     width: 100%;
-    overflow: auto; /* Adiciona barra de rolagem quando necessário */
+    border-bottom:  3px solid #ddd;
+    
 }
+.selecionar{
+    padding-right: 3px; 
+}
+
 
 
 th, td {

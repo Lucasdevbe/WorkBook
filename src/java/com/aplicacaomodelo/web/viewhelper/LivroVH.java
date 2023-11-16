@@ -35,10 +35,12 @@ public class LivroVH implements IViewHelper {
                 String autor = request.getParameter("autor");
                 String editora = request.getParameter("editora");
                 String sano = request.getParameter("ano");
+                String descricao = request.getParameter("descricao");
 
                 livro.setNome(nome);
                 livro.setAutor(autor);
                 livro.setEditora(editora);
+                livro.setDescricao(descricao);
 
                 int ano = Integer.parseInt(sano);
                 livro.setAno(ano);
@@ -47,8 +49,9 @@ public class LivroVH implements IViewHelper {
             }
 
             case "VISUALIZAR": {
-                String nome = request.getParameter("nome");
-                livro.setNome(nome);
+                String sid = request.getParameter("id");
+                int id = Integer.parseInt(sid);
+                livro.setId(id);
                 break;
             }
             case "EXCLUIR": {
@@ -59,7 +62,29 @@ public class LivroVH implements IViewHelper {
                 break;
             }
             case "CONSULTAR": {
+                String nome = request.getParameter("nome");
+                livro.setNome(nome);
+                break;
+            }
+            case "ALTERAR": {
+                String sid = request.getParameter("id");
+                int id = Integer.parseInt(sid);
+                livro.setId(id);
+                
+                String nome = request.getParameter("nome");
+                String autor = request.getParameter("autor");
+                String editora = request.getParameter("editora");
+                String sano = request.getParameter("ano");
+                String descricao = request.getParameter("descricao");
 
+                livro.setNome(nome);
+                livro.setAutor(autor);
+                livro.setEditora(editora);
+                livro.setDescricao(descricao);
+
+                int ano = Integer.parseInt(sano);
+                livro.setAno(ano);
+                
                 break;
             }
             default:
@@ -77,19 +102,33 @@ public class LivroVH implements IViewHelper {
 
         String operacao = request.getParameter("operacao");
         
-        if ("salvar".equals(operacao)) {
-            
-            request.getRequestDispatcher("CadastroLivro.jsp").forward(request, response);
-            
-        } else if ("CONSULTAR".equals(operacao)) {
-            request.getRequestDispatcher("AreaVendedor.jsp").forward(request, response);
+        
+        
+        if (null != operacao) switch (operacao) {
+            case "SALVAR":
+                request.getRequestDispatcher("Cadastrolivro.jsp").forward(request, response);
+                break;
+            case "CONSULTAR":
+                request.getRequestDispatcher("AreaVendedor.jsp").forward(request, response);
+                break;
+            case "EXCLUIR":
+                response.sendRedirect("AreaVendedor.jsp");
+                break;
+            case "VISUALIZAR":
+                request.getRequestDispatcher("AlterarLivro.jsp").forward(request, response);
+                break;
+            case "ALTERAR":
+                request.getRequestDispatcher("AlterarLivros.jsp").forward(request, response);
+                break;
+            default:
+                break;
         }
-{
-            
-        }
-
-    }
 }
+}
+        
+
+    
+
 
     
     

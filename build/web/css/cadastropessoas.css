@@ -20,13 +20,13 @@ body {
     align-items: center; /* Centraliza horizontalmente */
 }
 
-.container {
+main {
     margin-top: 40px;
     background-color: rgba(255, 255, 255, 0.8); /* Cor de fundo semi-transparente */
-    padding: 20px;
+    padding: 5px;
     border-radius: 10px;
     width: 90%; /* Largura do container */
-    display: flex;
+    display: block;
     flex-direction: column;
     align-items: center; /* Centraliza horizontalmente */
 }
@@ -36,14 +36,28 @@ body {
 }
 
 .form-field {
-    width: calc(20% - 20px); /* 2 campos lado a lado com 20px de espaçamento */
+    width: calc(10% - 10px); /* 2 campos lado a lado com 20px de espaçamento */
     padding: 10px;
     margin-top: 10px;
-    margin-right: 7px; /* Espaçamento entre os campos */
+    margin-right: 5px; /* Espaçamento entre os campos */
     border: 1px solid #ddd;
     border-radius: 5px;
     box-sizing: border-box;
 }
+.form-field_input{
+    width: calc(10% - 10px); /* 2 campos lado a lado com 20px de espaçamento */
+    padding: 100px;
+    margin-top: 10px;
+    margin-right: 5px; /* Espaçamento entre os campos */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.formulario{
+    margin-top: 10px;
+    margin-left: 5px
+}
+
 
 .button-container {
     display: flex;
@@ -65,7 +79,7 @@ body {
     background-color: #007bff;
     color: #fff;
     border: none;
-    cursor: pointer;
+    /*cursor: pointer;
 }
 
 table {
@@ -78,18 +92,25 @@ table {
 .table-container {
     max-height: 300px; /* Altura máxima da tabela */
     width: 100%;
-    overflow: auto; /* Adiciona barra de rolagem quando necessário */
+    /*overflow: auto; /* Adiciona barra de rolagem quando necessário */
 }
 
 
 th, td {
-    padding: 8px;
+    padding: 10px;
     text-align: left;
-    border-bottom: 1px solid #ddd;
+    border: 1px solid #ddd;
+    margin-left: 10px;
+}
+tr{
+    margin: 10px;
 }
 
 .action-buttons {
     display: flex;
     gap: 10px;
+}
+input{
+    padding: 50px;
 }
 

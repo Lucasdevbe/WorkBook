@@ -14,6 +14,9 @@
        <url-pattern>/ConsultarLivro</url-pattern>
        <url-pattern>/VisualizarLivro</url-pattern>
        <url-pattern>/ExcluirLivro</url-pattern>
+       <url-pattern>/ListarLivros</url-pattern>
+       <url-pattern>/Visualizar_alterar</url-pattern>
+       <url-pattern>/AlterarLivro</url-pattern>
        
        <url-pattern>/SalvarVendedor</url-pattern>
        <url-pattern>/ConsultarVendedor</url-pattern>

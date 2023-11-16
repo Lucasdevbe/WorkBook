@@ -14,6 +14,7 @@ import com.aplicacaomodelo.web.command.VisualizarCommand;
 import com.aplicacaomodelo.web.interfaces.ICommand;
 import com.aplicacaomodelo.web.interfaces.IViewHelper;
 import com.aplicacaomodelo.web.viewhelper.LivroVH;
+import com.aplicacaomodelo.web.viewhelper.Livrosindex;
 import com.aplicacaomodelo.web.viewhelper.PessoaVH;
 import com.aplicacaomodelo.web.viewhelper.VendedorVH;
 import java.io.IOException;
@@ -64,6 +65,10 @@ public class Servlet extends HttpServlet {
         vhs.put("/WorkBook/ConsultarLivro", new LivroVH());
         vhs.put("/WorkBook/VisualizarLivro", new LivroVH());
         vhs.put("/WorkBook/ExcluirLivro", new LivroVH());
+        vhs.put("/WorkBook/Visualizar_alterar", new LivroVH());
+        vhs.put("/WorkBook/AlterarLivro", new LivroVH());
+        
+        vhs.put("/WorkBook/ListarLivros", new Livrosindex());
         
         vhs.put("/WorkBook/SalvarVendedor", new VendedorVH());
         vhs.put("/WorkBook/ConsultarVendedor", new VendedorVH());

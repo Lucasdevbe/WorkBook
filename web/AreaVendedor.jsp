@@ -17,18 +17,19 @@
 </head>
 <body onload="consultar()" >
     <header>
-        <h1>Área do Vendedor</h1>
+        <c:forEach   var="vendedor" items="${listaVendedor}" varStatus="id">
+                <p>Olá, ${vendedor.nome} seja bem-vindo </p>
+                    </c:forEach>
     </header>
 
     <div class="container">
         <aside class="sidebar">
             <h2>Menu</h2>
             
-            <c:forEach   var="vendedor" items="${listaVendedor}" varStatus="id">
-                <p>${vendedor.nome}</p>
-            </c:forEach>
+            
             
             <ul>
+                
                 <button onclick="consultar()"  type="submit" id="operacao" name="operacao" value="CONSULTAR" class="button">MEUS lIVROS</button>
                 <li><a href="Cadastrolivro.jsp">Adicionar Novo Livro</a></li>
                 <li><a href="#">Estatísticas de Vendas</a></li>
@@ -53,21 +54,24 @@
                         <div class="table-container" ">
                 <table>
                     <tr>
+                        <th></th>
                         <th>Nome</th>
                         <th>Autor</th>
                         <th>Editora</th>
                         <th>ano</th>
                     </tr>
                     <c:forEach   var="livro" items="${listaLivros}" varStatus="id">
+                        <td><input type="checkbox" name="selecionar" onclick="selecionar(${livro.id})></td>
                         <tr id="${livro.id}">
-                            <td onclick="selecionar(${livro.id})">${livro.nome}</td>
+                            
+                            <td ">${livro.nome}</td>
                             
                             <td>${livro.autor}</td>
                              <td>${livro.editora}</td> 
                             
                             <td onclick="selecionar(${livro.id})">${livro.ano}</td>
                             <td class="action-buttons">
-                                <button class="save-button">Editar</button>
+                                <button onclick="Vis_alterar(${livro.id})" class="save-button">Editar</button>
                                 <button onclick="excluir(${livro.id})"  class="delete-button">Excluir</button>
                             </td>
                         </tr>

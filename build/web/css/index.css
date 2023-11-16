@@ -3,7 +3,9 @@ body {
     margin: 0;
     padding: 0;
 }
-
+main{
+    display: flex;
+}
 header {
     background-color: #333;
     color: #fff;
@@ -11,6 +13,12 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.formulario{
+    padding: 10px 10px 20px;
+}
+.alterar_buttom{
+    padding: 10px 20px;
 }
 nav {
     display: flex;
@@ -89,6 +97,40 @@ nav {
     padding: 20px;
     transition: margin-left 0.5s;
 }
+div.container {
+    
+    margin-top: 40px;
+    background-color: #009688; /* Cor de fundo semi-transparente */
+    padding: 5px;
+    border-radius: 10px;
+     /* Largura do container */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente */
+    border: 2px #007a63 solid;
+    
+}
+.table{
+    width: 40%;
+    width: 40%;
+}
+.table-container {
+     /* Altura máxima da tabela */
+    width: 40%;
+    border-bottom:  3px solid #ddd;
+    
+}
+.selecionar{
+    padding-right: 3px; 
+}
+
+
+
+th, td {
+    padding: 0px 30px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
 
 
 
@@ -100,6 +142,11 @@ nav {
     border: none;
     font-size: 18px;
 }
+
+
+
+
+
 
 @media screen and (max-width: 768px) {
     .nav-links {

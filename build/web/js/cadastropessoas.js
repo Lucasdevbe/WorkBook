@@ -5,26 +5,38 @@
 var anterior = 0;
 
 
-function EX_CON(id) {
-    sid = id;
-
+function Vis_alterar(id){
     
-    consultar();
-    excluir(sid);
-
+    var id = id;
+    
+    location.href = "/WorkBook/Visualizar_alterar?id=" + id + "&operacao=VISUALIZAR";
 }
 
-function consultar() {
-    location.href = "/WorkBook/ConsultarLivro?&operacao=CONSULTAR";
+function alterar(id){
+    
+    var id = id;
+    var nome = document.getElementById("nome").value;
+    var autor = document.getElementById("autor").value;
+    var editora = document.getElementById("editora").value;
+    var ano = document.getElementById("ano").value;
+    var descricao = document.getElementById("descricao").value;
+    location.href = "/WorkBook/AlterarLivro?id=" + id + "&nome"+nome+"&autor"+autor+"&editora" + editora+ "&ano"+ano+"&descricao"+descricao+ "&operacao=ALTERAR";
+}
+function consultar(id) {
+    location.href = "/WorkBook/ConsultarLivro?id=&operacao=CONSULTAR";
     consultar().break;
 }
-function excluir(sid) {
+function consultarVen(){
+    
+    location.href = "/WorkBook/ConsultarVendedor?&operacao=CONSULTAR";
+    consultar().break;
+}
+function excluir(id) {
     if (anterior === 0) {
-        anterior = sid;
+        anterior = id;
     }
-    var alerta = document.createElement("p");
-    alerta.appendChild(document.createTextNode("Visualizar"));
-    anterior = sid;
+    
+    anterior = id;
     location.href = "/WorkBook/ExcluirLivro?id=" + anterior + "&operacao=EXCLUIR";
     
     
