@@ -98,7 +98,7 @@ public class Servlet extends HttpServlet {
         IViewHelper vh = vhs.get(uri);
 
         //O viewhelper retorna a entidade especifica para a tela que chamou esta servlet
-         EntidadeDominio entidade = vh.getEntidade(request);
+          EntidadeDominio entidade = vh.getEntidade(request);
 
         //Obtêm o command para executar a respectiva operação
         ICommand command = commands.get(operacao);

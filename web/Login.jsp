@@ -17,10 +17,10 @@
 <body>
 
     <form action="/WorkBook/ConsultarVendedor" method="post">
-    <label for="email">Username:</label>
+    <label for="email">E-mail:</label>
     <input type="email" id="email" name="email" required>
 
-    <label for="senha  ">Password:</label>
+    <label for="senha  ">Senha:</label>
     <input type="password" id="senha" name="senha" required>
 
     <button type="submit" id="operacao" name="operacao" value="CONSULTAR">Login</button>

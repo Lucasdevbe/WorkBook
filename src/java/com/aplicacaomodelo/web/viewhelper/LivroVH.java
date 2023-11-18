@@ -49,9 +49,9 @@ public class LivroVH implements IViewHelper {
             }
 
             case "VISUALIZAR": {
-                String sid = request.getParameter("id");
-                int id = Integer.parseInt(sid);
-                livro.setId(id);
+                String nome = request.getParameter("nome");
+                livro.setNome(nome);
+
                 break;
             }
             case "EXCLUIR": {
@@ -75,12 +75,14 @@ public class LivroVH implements IViewHelper {
                 String autor = request.getParameter("autor");
                 String editora = request.getParameter("editora");
                 String sano = request.getParameter("ano");
+                String categoria = request.getParameter("categoria");
                 String descricao = request.getParameter("descricao");
 
                 livro.setNome(nome);
                 livro.setAutor(autor);
                 livro.setEditora(editora);
                 livro.setDescricao(descricao);
+                livro.setCategoria(categoria);
 
                 int ano = Integer.parseInt(sano);
                 livro.setAno(ano);
@@ -102,6 +104,8 @@ public class LivroVH implements IViewHelper {
 
         String operacao = request.getParameter("operacao");
         
+        String uri = request.getRequestURI();
+        
         
         
         if (null != operacao) switch (operacao) {
@@ -115,10 +119,15 @@ public class LivroVH implements IViewHelper {
                 response.sendRedirect("AreaVendedor.jsp");
                 break;
             case "VISUALIZAR":
-                request.getRequestDispatcher("AlterarLivro.jsp").forward(request, response);
-                break;
+                if(uri.equals("com.aplicacaomodelo.web.servlet.Servlet/Visualizar_alterar"))
+                request.getRequestDispatcher("AterarLivro.jsp").forward(request, response);
+               
+                else{
+                    request.getRequestDispatcher("AreaVendedor.jsp").forward(request, response);
+                        
+                        }
             case "ALTERAR":
-                request.getRequestDispatcher("AlterarLivros.jsp").forward(request, response);
+                request.getRequestDispatcher("AlterarLivro.jsp").forward(request, response);
                 break;
             default:
                 break;

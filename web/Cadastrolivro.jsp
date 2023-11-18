@@ -52,18 +52,23 @@
 
                                 <label name="ano" >Ano do livro</label>
                                 <input type="number" id="ano" name="ano" class="form-field"  required>
+                                
+                                
 
                             </div >
                             <div class="formulario">
                                 <label name="descricao" >Descrição</label>
                                 <input type="text" id="descricao" name="descricao" class="form-field_input"  required>
+                                
+                                <label name="categoria" >Categoria</label>
+                                <input type="text" id="categoria" name="categoria" class="form-field"  required>
                             </div>
                             </div>
                             <input class="sa" type="submit" name="operacao" id="operacao" value="SALVAR" >
                             </form>
 
 
-                            <h2>Registros de Pessoas</h2>
+                            <h2>Livro Cadastrado</h2>
 
                             <div class="table-container">
                                 <table>
@@ -72,6 +77,7 @@
                                         <th>Autor</th>
                                         <th>Editora</th>
                                         <th>Ano</th>
+                                        <th>categoria</th>
                                         <th>Descrição</th>
                                     </tr>
                                     <c:forEach var="livros" items="${listaLivros}" varStatus="id">
@@ -81,6 +87,7 @@
                                             <td>${livros.editora} </td>
                                             <td>${livros.ano}</td>
                                             <td>${livros.descricao}</td>
+                                            <td>${livros.categoria}</td>
                                             <td class="action-buttons">
                                                 <button class="save-button">Editar</button>
                                                 <button class="delete-button">Excluir</button>

@@ -10,8 +10,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Área do Vendedor - Livraria</title>
+    <title>Área do Vendedor - WookBook</title>
     <link rel="stylesheet" href="css/AreaVendedor.css">
+    
     
     <script type="text/javascript" src="js/cadastropessoas.js"></script>
 </head>
@@ -19,7 +20,20 @@
     <header>
         <c:forEach   var="vendedor" items="${listaVendedor}" varStatus="id">
                 <p>Olá, ${vendedor.nome} seja bem-vindo </p>
+                
                     </c:forEach>
+                <h1>WorkBook</h1>
+            <nav>
+                <div class="menu-icon">&#9776;</div>
+                <ul class="nav-links">
+                    <li><a href="/WorkBook/ConsultarLivro">Página Inicial</a></li>
+                    <li><a href="#">Livros</a></li>
+                    <li><a href="#">Categorias</a></li>
+                    <li><a href="#">Contato</a></li>
+
+
+                </ul>
+            </nav>
     </header>
 
     <div class="container">
@@ -29,22 +43,22 @@
             
             
             <ul>
-                
-                <button onclick="consultar()"  type="submit" id="operacao" name="operacao" value="CONSULTAR" class="button">MEUS lIVROS</button>
-                <li><a href="Cadastrolivro.jsp">Adicionar Novo Livro</a></li>
-                <li><a href="#">Estatísticas de Vendas</a></li>
+                <li><div class="Furos"></div><button onclick="consultar()"  type="submit" id="operacao" name="operacao" value="CONSULTAR" class="sidebar_menu">Meus Livros</button></li>
+                <li><div class="Furos"></div><button class="sidebar_menu"><a href="Cadastrolivro.jsp">Adicionar Novo Livro</a></button></li>
+                <li><div class="Furos"></div><button class="sidebar_menu"><a href="#">Estatísticas de Vendas</a></button></li>
                 <!-- Adicione mais opções de menu conforme necessário -->
             </ul>
         </aside>
 
-        <main class="main-content" onload="consultar()">
+        <main class="main-content" ">
             <section class="my-books">
                 
                 <div class="table-container">
                 
                     <form action="/WorkBook/VisualizarLivro" method="post">
-                        <div class="input-container">
+                        <div class="input-container" >
                      <label for="nome">Nome do Livro:</label>
+                     
                     <input type="text" id="nome" name="nome" class="input-field" required>
                     <button type="submit" id="operacao" name="operacao" value="VISUALIZAR" class="button">Pesquisar</button>
                     <output id="msg" for="nome" >${msg}</output>
@@ -58,6 +72,7 @@
                         <th>Nome</th>
                         <th>Autor</th>
                         <th>Editora</th>
+                        <th>categoria</th>
                         <th>ano</th>
                     </tr>
                     <c:forEach   var="livro" items="${listaLivros}" varStatus="id">
@@ -68,6 +83,7 @@
                             
                             <td>${livro.autor}</td>
                              <td>${livro.editora}</td> 
+                             <td>${livro.categoria}</td>
                             
                             <td onclick="selecionar(${livro.id})">${livro.ano}</td>
                             <td class="action-buttons">

@@ -55,7 +55,7 @@ public class LivroDAO extends AbstractJdbcDAO {
             connection.setAutoCommit(false);
 
             StringBuilder sql = new StringBuilder();
-            sql.append("INSERT INTO tb_Livros (nome, autor, editora, ano, descricao ) VALUES (?,?,?,?,?)");
+            sql.append("INSERT INTO tb_Livros (nome, autor, editora, ano, descricao, categoria ) VALUES (?,?,?,?,?,?)");
 
             pst = connection.prepareStatement(sql.toString(), Statement.RETURN_GENERATED_KEYS);
 
@@ -64,6 +64,7 @@ public class LivroDAO extends AbstractJdbcDAO {
             pst.setString(3, p.getEditora());
 
             pst.setInt(4, p.getAno());
+            pst.setString(6, p.getCategoria());
             pst.setString(5, p.getDescricao());
 
             pst.executeUpdate();
@@ -110,13 +111,14 @@ public class LivroDAO extends AbstractJdbcDAO {
             sql.append("update tb_livros set nome = ?, autor = ?,editora= ?,ano = ?,descricao = ?  where id_pessoa = ?; ");
 
             pst = connection.prepareStatement(sql.toString(), Statement.RETURN_GENERATED_KEYS);
-
+            pst.setInt(6, p.getId());
             pst.setString(1, p.getNome());
             pst.setString(2, p.getAutor());
             pst.setString(3, p.getEditora());
 
             pst.setInt(4, p.getAno());
             pst.setString(5, p.getDescricao());
+            
 
             pst.executeUpdate();
 
@@ -243,9 +245,9 @@ public class LivroDAO extends AbstractJdbcDAO {
         try {
             
             PreparedStatement ps;            
-            String sql = "SELECT * FROM tb_livros WHERE id_pessoa=?";
+            String sql = "SELECT * FROM tb_livros WHERE nome=?";
             ps = connection.prepareStatement(sql);
-            ps.setInt(1, livro.getId());
+            ps.setString(1, livro.getNome());
             
              try (ResultSet rs = ps.executeQuery()) {
                  if(rs.next()){
@@ -255,6 +257,7 @@ public class LivroDAO extends AbstractJdbcDAO {
                      livro.setEditora(rs.getString("editora"));
                      livro.setAutor(rs.getString("autor"));
                      livro.setDescricao(rs.getString("descricao"));
+                     
                      livro.setAno(rs.getInt("ano"));
                      
                      

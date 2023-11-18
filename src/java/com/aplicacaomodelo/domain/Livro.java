@@ -20,12 +20,15 @@ public class Livro extends EntidadeDominio {
     private String editora;
     private int ano;
     private String descricao;
+    private String categoria;
+
+    
 
     public Livro() {
 
     }
 
-    public Livro(int i, String nome, String autor, String editora, int ano , String descricao) {
+    public Livro(int i, String nome, String autor, String editora, int ano , String descricao, String categoria) {
 
         setId(i);
         this.nome = nome;
@@ -33,8 +36,15 @@ public class Livro extends EntidadeDominio {
         this.editora = editora;
         this.ano = ano;
         this.descricao = descricao;
+        this.categoria = categoria;
+    }
+    public String getCategoria() {
+        return categoria;
     }
 
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
     public String getDescricao() {
         return descricao;
     }

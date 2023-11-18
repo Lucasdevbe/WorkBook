@@ -32,33 +32,34 @@
         <main> 
             <div class="container">
             <c:forEach   var="livro" items="${listaLivros}" varStatus="id">
-                <form action="/WorkBook/AlterarLivro" method="post">
+                <form action="AlterarLivro?id=${livro.id}&operacao=ALTERAR" method="post" >
                    
 
-                    <div class="formulario" " >
+                    <div class="formulario" id="${livro.id}" " >
                             <label name="nome" >Nome Do Livro</label>
-                            <input type="text" id="nome" name="nome" class="form-field"placeholder="${livro.nome}" value="${livro.nome}" >
+                            <input type="text" id="nome" name="nome" class="form-field"placeholder="${livro.nome}" " >
 
                             <label name="Autor" >Autor</label>
-                            <input type="text" id="Autor" name="autor" class="form-field" placeholder="${livro.autor}"  value="${livro.autor}">
+                            <input type="text" id="Autor" name="autor" class="form-field" placeholder="${livro.autor}"  ">
                         </div>
                         <div class="formulario">
                             <label name="editora" >${livro.editora}</label>
-                            <input type="text" id="Editora" name="editora" class="form-field" placeholder="${livro.editora}" value="${livro.editora}" >
+                            <input type="text" id="Editora" name="editora" class="form-field" placeholder="${livro.editora}" " >
 
                             <label name="ano" >Ano do livro</label>
-                            <input type="number" id="ano" name="ano" class="form-field" placeholder="${livro.ano}" value="${livro.ano}"  >
+                            <input type="number" id="ano" name="ano" class="form-field" placeholder="${livro.ano}" "  >
 
                         </div >
                         <div class="formulario">
                             <label name="descricao" >Descrição</label>
-                            <input type="text" id="descricao" name="descricao" class="form-field_input"  value="${livro.descricao}" >
+                            <input type="text" id="descricao" name="descricao" class="form-field_input"  " >
                         </div>
                     
-                        <button type="submit"  onclick="alterar(livro.id) class="alterar_buttom" nome="operacao" id="operacacao" value="ALTERAR" >Alterar</button>
+                        <button type="submit" id="operacao" name="operacao" value="ALTERAR" class="button">Alterar</button>  
+                </form>
             </div>
                 </c:forEach>
-            </form>
+          
             <div class="table-container" ">
                 <table class="table">
                     <tr>

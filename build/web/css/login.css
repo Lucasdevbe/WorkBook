@@ -51,4 +51,5 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
 
     button:hover {
       background-color: #45a049;
+      transition: margin-left 0.5s;
     }
