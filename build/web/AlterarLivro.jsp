@@ -49,8 +49,7 @@
                             <label name="ano" >Ano do livro</label>
                             <input type="number" id="ano" name="ano" class="form-field" placeholder="${livro.ano}" "  >
 
-                        </div >
-                        <div class="formulario">
+                        
                             <label name="descricao" >Descrição</label>
                             <input type="text" id="descricao" name="descricao" class="form-field_input"  " >
                         </div>

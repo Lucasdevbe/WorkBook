@@ -1,3 +1,15 @@
+:root{
+    
+    -azul_escuro2: #3C29F0;
+    -azul_escuro1:    #2A4EFA;
+    -azul_medio:    #327FE3;
+    -azul_claro:    #2ABBFA;
+    -branco: #fff;
+    -verde_header: #28E07C;
+}
+
+
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -23,6 +35,7 @@ header > h1{
 .alterar_buttom{
     padding: 10px 20px;
 }
+
 nav {
     display: flex;
     align-items: center;
@@ -38,6 +51,7 @@ nav {
 .nav-links li {
     margin-right: 20px;
 }
+
 
 .nav-links a {
     color: #fff;

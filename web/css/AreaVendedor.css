@@ -7,6 +7,18 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     Author     : silva
 */
 
+
+
+:root{
+    
+    -azul_escuro2: #3C29F0;
+    -azul_escuro1:    #2A4EFA;
+    -azul_medio:    #327FE3;
+    -azul_claro:    #2ABBFA;
+    -branco: #fff;
+    -verde_header: #28E07C;
+
+}
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -14,7 +26,7 @@ body {
 }
 
 header {
-     background-color: #2ABBFA;
+     background-color: #28E0BB;
     color: #fff;
     padding: 20px 0;
     display: flex;
@@ -39,6 +51,19 @@ header > h1{
     border-radius: 0px 10px 10px 0px;
     
 }
+button{
+    text-decoration: none;
+    background-color: #28E0BB;
+    border: none;
+    border-radius: 5px;
+    padding: 2px 10px;
+    color: white;
+    
+    
+}
+button:hover{
+    cursor: pointer;
+}
 button.sidebar_menu{
     padding: 10px 50px 10px 20px;
     margin: 0px  10px 10px;
@@ -50,8 +75,9 @@ button.sidebar_menu{
 button.sidebar_menu:hover{
     
     padding: 15px 55px 10px 20px;
-    box-shadow: 2px 3px 8px black; 
-    background-color: black;
+    box-shadow: 2px 3px 10px gray; 
+    cursor: pointer;
+   
         
 }
 .Furos{
@@ -137,14 +163,5 @@ nav {
     cursor: pointer;
     font-size: 24px;
 }
-button{
-    text-decoration: none;
-    background-color: #327FE3;
-    border: none;
-    border-radius: 5px;
-    padding: 2px 10px;
-    color: white;
-    transition: background-color 0.3s, color 0.3s;
-    
-}
+
 
