@@ -4,21 +4,21 @@
  */
 package com.aplicacaomodelo.core.impl.persistencia;
 
-import com.aplicacaomodelo.core.aplicacao.Resultado;
 import com.aplicacaomodelo.domain.EntidadeDominio;
 import com.aplicacaomodelo.domain.Livro;
-import com.aplicacaomodelo.domain.Pessoa;
+
 import com.aplicacaomodelo.domain.Vendedor;
 import java.sql.Connection;
-import java.sql.Date;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Time;
 import java.util.ArrayList;
-import java.util.Calendar;
+
 import java.util.GregorianCalendar;
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -95,52 +95,8 @@ public class LivroDAO extends AbstractJdbcDAO {
             }
         }
     }
-
-    @Override
-    public void alterar(EntidadeDominio entidade) throws SQLException {
-         if (connection == null) {
-            openConnection();
-        }
-        PreparedStatement pst = null;
-        Livro p = (Livro) entidade;
-
-        try {
-            connection.setAutoCommit(false);
-
-            StringBuilder sql = new StringBuilder();
-            sql.append("update tb_livros set nome = ?, autor = ?,editora= ?,ano = ?,descricao = ?  where id_pessoa = ?; ");
-
-            pst = connection.prepareStatement(sql.toString(), Statement.RETURN_GENERATED_KEYS);
-            pst.setInt(6, p.getId());
-            pst.setString(1, p.getNome());
-            pst.setString(2, p.getAutor());
-            pst.setString(3, p.getEditora());
-
-            pst.setInt(4, p.getAno());
-            pst.setString(5, p.getDescricao());
-            
-
-            pst.executeUpdate();
-
-            connection.commit();
-
-        } catch (SQLException e) {
-            try {
-                connection.rollback();
-            } catch (SQLException e1) {
-                e1.printStackTrace();
-            }
-            e.printStackTrace();
-        } finally {
-            try {
-                pst.close();
-                connection.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
     
-    }
+   
 
     @Override
     public void excluir(EntidadeDominio entidade) {
@@ -237,49 +193,137 @@ public class LivroDAO extends AbstractJdbcDAO {
     @Override
     public EntidadeDominio visualizar(EntidadeDominio entidade) throws SQLException {
 
-         if(connection == null){
+        if (connection == null) {
             openConnection();
         }
         Livro livro = (Livro) entidade;
-        
+
         try {
-            
-            PreparedStatement ps;            
-            String sql = "SELECT * FROM tb_livros WHERE nome=?";
+
+            PreparedStatement ps;
+            String sql = "SELECT * FROM tb_livros WHERE id_pessoa=?";
             ps = connection.prepareStatement(sql);
-            ps.setString(1, livro.getNome());
-            
-             try (ResultSet rs = ps.executeQuery()) {
-                 if(rs.next()){
-                     
-                     livro.setId(rs.getInt("id_pessoa"));
-                     livro.setNome(rs.getString("nome"));
-                     livro.setEditora(rs.getString("editora"));
-                     livro.setAutor(rs.getString("autor"));
-                     livro.setDescricao(rs.getString("descricao"));
-                     
-                     livro.setAno(rs.getInt("ano"));
-                     
-                     
-                     
-                     
-                     
-                 }
-                 
-                 ps.close();
-             }
-            if(ctrlTransaction){
+            ps.setInt(1, livro.getId());
+
+            try ( ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+
+                    livro.setId(rs.getInt("id_pessoa"));
+                    livro.setNome(rs.getString("nome"));
+                    livro.setEditora(rs.getString("editora"));
+                    livro.setAutor(rs.getString("autor"));
+                    livro.setDescricao(rs.getString("descricao"));
+
+                    livro.setAno(rs.getInt("ano"));
+
+                }
+
+                ps.close();
+            }
+            if (ctrlTransaction) {
                 connection.close();
             }
-            
-            
+
         } catch (SQLException e) {
         }
-        
+
         return livro;
-    } 
+    }
+
     private Time getTime() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-}
+    @Override
+    public void alterar(EntidadeDominio entidade) throws SQLException {
+        
+        if (connection == null) {
+            openConnection();
+        }
+        PreparedStatement pst = null;
+        Livro l = (Livro) entidade;
+
+        try {
+
+            connection.setAutoCommit(false);
+            Integer id = l.getId();
+
+            if (l.getNome() != null) {
+                StringBuilder sql = new StringBuilder();
+                sql.append("update tb_livros set nome = ? where id_pessoa = ?; ");
+                pst = connection.prepareStatement(sql.toString(), Statement.RETURN_GENERATED_KEYS);
+
+                pst.setString(1, l.getNome());
+                pst.setInt(2, id);
+            }
+            if (!"".equals(l.getAutor())) {
+                StringBuilder sql = new StringBuilder();
+                sql.append("update tb_livros set autor = ? where id_pessoa = ? ");
+                pst = connection.prepareStatement(sql.toString(), Statement.RETURN_GENERATED_KEYS);
+
+                pst.setString(1, l.getAutor());
+                pst.setInt(2, id);
+            }
+            if (!"".equals(l.getEditora())) {
+                StringBuilder sql = new StringBuilder();
+                sql.append("update tb_livros set editora = ? where id_pessoa = ? ");
+                pst = connection.prepareStatement(sql.toString(), Statement.RETURN_GENERATED_KEYS);
+
+                pst.setString(1, l.getEditora());
+                pst.setInt(2, id);
+            }
+            if (l.getAno() != 0) {
+                StringBuilder sql = new StringBuilder();
+                sql.append("update tb_livros set ano = ? where id_pessoa = ? ");
+                pst = connection.prepareStatement(sql.toString(), Statement.RETURN_GENERATED_KEYS);
+
+                pst.setInt(1, l.getAno());
+                pst.setInt(2, id);
+            }
+            if (!"".equals(l.getDescricao())) {
+                StringBuilder sql = new StringBuilder();
+                sql.append("update tb_livros set descricao = ? where id_pessoa = ? ");
+                pst = connection.prepareStatement(sql.toString(), Statement.RETURN_GENERATED_KEYS);
+
+                pst.setString(1, l.getDescricao());
+                pst.setInt(2, id);
+            }
+            if (!"".equals(l.getEditora())) {
+                StringBuilder sql = new StringBuilder();
+                sql.append("update tb_livros set editora = ? where id_pessoa = ? ");
+                pst = connection.prepareStatement(sql.toString(), Statement.RETURN_GENERATED_KEYS);
+
+                pst.setString(1, l.getEditora());
+                pst.setInt(2, id);
+            }
+
+            pst.executeUpdate();
+
+            connection.commit();
+
+        } catch (SQLException e) {
+            try {
+                connection.rollback();
+            } catch (SQLException e1) {
+                e1.printStackTrace();
+            }
+            e.printStackTrace();
+        } finally {
+            try {
+                pst.close();
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+    }
+
+        
+    }
+
+   
+
+    
+
+

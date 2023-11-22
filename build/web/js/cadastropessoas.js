@@ -8,9 +8,9 @@ var anterior = 0;
 function Vis_alterar(id){
     
     var id = id;
-    var nome = document.getElementById("nome").value;
-    location.href = "/WorkBook/Visualizar_alterar?id=" + id + "&operacao=VISUALIZAR";
     
+    location.href = "/WorkBook/Visualizar_alterar?id=" + id + "&operacao=VISUALIZAR";
+    Vis_alterar.break;
 }
 
 function alterar(id){
@@ -23,11 +23,13 @@ function alterar(id){
     var descricao = document.getElementById("descricao").value;
     location.href = "/WorkBook/AlterarLivro?id=" + id + "&nome"+nome+"&autor"+autor+"&editora" + editora+ "&ano"+ano+"&descricao"+descricao+ "&operacao=ALTERAR";
 }
-function consultar(id) {
+function consultar() {
     
     location.href = "/WorkBook/ConsultarLivro?&operacao=CONSULTAR";
     consultar().break;
 }
+
+    
 function consultarVen(){
     
     location.href = "/WorkBook/ConsultarVendedor?&operacao=CONSULTAR";

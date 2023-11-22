@@ -11,10 +11,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/index.css"/>
+        <script type="text/javascript" src="js/cadastropessoas.js"></script>
         
-        <title>JSP Page</title>
+        <title>Alterar Livro</title>
     </head>
-    <body>
+    <body onload="Vis_alterar(id)()">
         <header >
             <h1>WorkBook</h1>
             <nav>
@@ -35,7 +36,7 @@
                 <form action="AlterarLivro?id=${livro.id}&operacao=ALTERAR" method="post" >
                    
 
-                    <div class="formulario" id="${livro.id}" " >
+                    <div class="formulario"  name="id" id="${livro.id}" " >
                             <label name="nome" >Nome Do Livro</label>
                             <input type="text" id="nome" name="nome" class="form-field"placeholder="${livro.nome}" " >
 
