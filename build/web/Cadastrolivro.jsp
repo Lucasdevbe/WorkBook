@@ -65,14 +65,14 @@
                             </div>
                             </div>
                              <div class="formulario">
-                                <label name="descricao" >Estoque</label>
-                                <input type="text" id="descricao" name="descricao" class="form-field_input"  required>
+                                <label name="estoque" >Estoque</label>
+                                <input type="number" id="estoque" name="estoque" class="form-field_input"  required>
                                 
                                 <label name="preco_custo" >Preço de Custo</label>
-                                <input type="text" id="categoria" name="categoria" class="form-field"  required>
+                                <input type="text" id="preco_custo" name="preco_custo" class="form-field"  required>
                                 
                                 <label name="preco_final" >Preço de Final</label>
-                                <input type="text" id="categoria" name="categoria" class="form-field"  required>
+                                <input type="text" id="preco_final" name="preco_final" class="form-field"  required>
                             </div>
                             </div>
                             <input class="sa" type="submit" name="operacao" id="operacao" value="SALVAR" >

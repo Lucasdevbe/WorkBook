@@ -21,6 +21,9 @@ public class Livro extends EntidadeDominio {
     private int ano;
     private String descricao;
     private String categoria;
+    private int estoque;
+    private double preco_custo;
+    private double preco_final;
 
     
 
@@ -108,5 +111,27 @@ public class Livro extends EntidadeDominio {
     public void setAno(int ano) {
         this.ano = ano;
     }
+public int getEstoque() {
+        return estoque;
+    }
 
+    public void setEstoque(int estoque) {
+        this.estoque = estoque;
+    }
+
+    public double getPreco_custo() {
+        return preco_custo;
+    }
+
+    public void setPreco_custo(double preco_custo) {
+        this.preco_custo = preco_custo;
+    }
+
+    public double getPreco_final() {
+        return preco_final;
+    }
+
+    public void setPreco_final(double preco_final) {
+        this.preco_final = preco_final;
+    }
 }

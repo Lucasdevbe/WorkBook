@@ -36,7 +36,17 @@ public class LivroVH implements IViewHelper {
                 String editora = request.getParameter("editora");
                 String sano = request.getParameter("ano");
                 String descricao = request.getParameter("descricao");
-
+                String categoria = request.getParameter("categoria");
+                                
+                String sestoque = request.getParameter("estoque");
+                int estoque = Integer.parseInt(sestoque);
+                                
+                String spreco_custo = request.getParameter("preco_custo");
+                double preco_custo = Double.parseDouble(spreco_custo);
+                
+                String spreco_final = request.getParameter("e");
+                double preco_final = Double.parseDouble(spreco_final);
+                
                 livro.setNome(nome);
                 livro.setAutor(autor);
                 livro.setEditora(editora);
@@ -44,6 +54,11 @@ public class LivroVH implements IViewHelper {
 
                 int ano = Integer.parseInt(sano);
                 livro.setAno(ano);
+                
+                livro.setCategoria(categoria);
+                livro.setEstoque(estoque);
+                
+                
 
                 break;
             }
