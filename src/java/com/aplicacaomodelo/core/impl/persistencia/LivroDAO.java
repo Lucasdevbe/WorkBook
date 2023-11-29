@@ -48,14 +48,19 @@ public class LivroDAO extends AbstractJdbcDAO {
         if (connection == null) {
             openConnection();
         }
+        
+        
         PreparedStatement pst = null;
         Livro p = (Livro) entidade;
+      
+        
+        
 
         try {
             connection.setAutoCommit(false);
 
             StringBuilder sql = new StringBuilder();
-            sql.append("INSERT INTO tb_Livros (nome, autor, editora, ano, descricao, categoria ) VALUES (?,?,?,?,?,?)");
+            sql.append("INSERT INTO tb_Livros (nome, autor, editora, ano, descricao, categoria, estoque,preco_custo, preco_final ,fk_vendedor ) VALUES (?,?,?,?,?,?,?,?,?,?)");
 
             pst = connection.prepareStatement(sql.toString(), Statement.RETURN_GENERATED_KEYS);
 
@@ -64,9 +69,15 @@ public class LivroDAO extends AbstractJdbcDAO {
             pst.setString(3, p.getEditora());
 
             pst.setInt(4, p.getAno());
-            pst.setString(6, p.getCategoria());
             pst.setString(5, p.getDescricao());
-
+            pst.setString(6, p.getCategoria());
+            pst.setInt(7, p.getEstoque());
+            pst.setDouble(8, p.getPreco_custo());
+            pst.setDouble(9, p.getPreco_final());
+            
+            
+            
+            
             pst.executeUpdate();
 
             ResultSet rs = pst.getGeneratedKeys();
@@ -94,6 +105,22 @@ public class LivroDAO extends AbstractJdbcDAO {
                 e.printStackTrace();
             }
         }
+//        try {
+//            Vendedor v =(Vendedor) entidade;
+//            
+//            connection.setAutoCommit(false);
+//
+//            StringBuilder sql = new StringBuilder();
+//            sql.append("update tb_livros set fk_vendedor = ? where id_pessoa = ?; ");
+//
+//            pst = connection.prepareStatement(sql.toString(), Statement.RETURN_GENERATED_KEYS);
+//            pst.setInt(10, v.getId());
+//            
+//            
+//        } catch (Exception e) {
+//        }
+            
+        
     }
     
    

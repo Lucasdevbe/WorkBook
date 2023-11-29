@@ -41,6 +41,13 @@
             <h2>Menu</h2>
             
             
+            Olá,<c:forEach var="vendedor" items="${listaVendedor}" varStatus="id"> ${vendedor.nome}</c:forEach> seja bem-vindo.
+                
+                <tr>
+                    <td>${vendedor.nome}</td>
+                </tr>
+                
+                
             
             <ul>
                 <li><div class="Furos"></div><button onclick="consultar()"  type="submit" id="operacao" name="operacao" value="CONSULTAR" class="sidebar_menu">Meus Livros</button></li>

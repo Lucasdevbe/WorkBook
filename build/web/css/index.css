@@ -158,6 +158,10 @@ th, td {
     border: none;
     font-size: 18px;
 }
+.titulo_table{
+    width: 100%;
+    padding: 10px 50%;
+}
 
 
 

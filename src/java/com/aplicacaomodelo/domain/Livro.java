@@ -3,8 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.aplicacaomodelo.domain;
-
-
+import com.aplicacaomodelo.domain.Vendedor;
 /**
  *
  * @author silva
@@ -25,14 +24,14 @@ public class Livro extends EntidadeDominio {
     private double preco_custo;
     private double preco_final;
 
-    
-
     public Livro() {
 
     }
 
-    public Livro(int i, String nome, String autor, String editora, int ano , String descricao, String categoria) {
+    public Livro(int i, String nome, String autor, String editora, int ano, String descricao, String categoria, int estoque, double preco_custo, double preco_final) {
 
+        
+        
         setId(i);
         this.nome = nome;
         this.autor = autor;
@@ -40,7 +39,12 @@ public class Livro extends EntidadeDominio {
         this.ano = ano;
         this.descricao = descricao;
         this.categoria = categoria;
+        this.estoque = estoque;
+        this.preco_custo = preco_custo;
+        this.preco_final = preco_final;
+        
     }
+
     public String getCategoria() {
         return categoria;
     }
@@ -48,6 +52,7 @@ public class Livro extends EntidadeDominio {
     public void setCategoria(String categoria) {
         this.categoria = categoria;
     }
+
     public String getDescricao() {
         return descricao;
     }
@@ -111,7 +116,8 @@ public class Livro extends EntidadeDominio {
     public void setAno(int ano) {
         this.ano = ano;
     }
-public int getEstoque() {
+
+    public int getEstoque() {
         return estoque;
     }
 
