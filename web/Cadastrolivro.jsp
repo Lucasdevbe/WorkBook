@@ -44,7 +44,7 @@
                         <divi>
 
                             <div class="formulario" id="${vendedor.id}">
-                                <input type="text" value="${vendedor.id}">
+                               
                                
 
                                     <tr>
@@ -52,8 +52,8 @@
                                     </tr>
 
                                 
-                                <label name="img_livro" >Autor</label>
-                                <input type="image" id="img_livro" name="img_livro" class="form-field" required>
+                               
+                                <input type="file" id="img_livro" name="img_livro" class="form-field" placeholder="foto do livro"required>
 
                                 <label name="nome" >Nome Do Livro</label>
                                 <input type="text" id="nome" name="nome" class="form-field"  required>
@@ -76,9 +76,9 @@
                                 <input type="text" id="descricao" name="descricao" class="form-field_input"  required>
 
                                 <label name="categoria" >Categoria</label>
-                                <<select name="categoria">
+                                <select name="categoria">
                                     <option value="fantasia">fantasia</option>
-                                    <option value="ficcao">Ficção científica</
+                                    <option value="ficcao">Ficção científica</option>
                                     <option value="Romance">Romance</option>
                                     <option value="aventura">Aventura</option>
                                 </select> 
@@ -95,7 +95,7 @@
                                 <input type="Text" size="12" onKeyUp="mascaraMoeda(this, event)"   id="preco_final" name="preco_final" class="form-field"  required>
                             </div>
                             </div>
-                            <input class="sa" type="submit" name="operacao" id="operacao" value="SALVAR" >
+                            <input class="operacao" type="submit" name="operacao" id="operacao" value="SALVAR" >
                             </form>
 
                             </div>
