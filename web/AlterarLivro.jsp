@@ -20,11 +20,11 @@
             <h1>WorkBook</h1>
             <nav>
                 <div class="menu-icon">&#9776;</div>
-                <ul class="nav-links">
-                    <li><a href="/WorkBook/ConsultarLivro">Página Inicial</a></li>
-                    <li><a href="#">Livros</a></li>
-                    <li><a href="#">Categorias</a></li>
-                    <li><a href="#">Contato</a></li>
+                <ul >
+                    <li class="nav-links"><a href="/WorkBook/ConsultarLivro">Página Inicial</a></li>
+                    <li class="nav-links"><a href="#">Livros</a></li>
+                    <li class="nav-links"><a href="#">Categorias</a></li>
+                    <li class="nav-links"><a href="#">Contato</a></li>
 
 
                 </ul>

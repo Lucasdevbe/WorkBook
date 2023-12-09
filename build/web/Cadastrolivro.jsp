@@ -53,8 +53,9 @@
 
                                 
                                
-                                <input type="file" id="img_livro" name="img_livro" class="form-field" placeholder="foto do livro"required>
-
+                                    <input type="file" id="img_livro" name="img_livro" class="form-field-img" placeholder="foto do livro"required>
+                            </div>
+                             <div class="formulario">
                                 <label name="nome" >Nome Do Livro</label>
                                 <input type="text" id="nome" name="nome" class="form-field"  required>
 

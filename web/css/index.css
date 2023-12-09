@@ -57,6 +57,13 @@ nav {
     color: #fff;
     text-decoration: none;
 }
+.nav-links a:hover{
+    
+    background-color: #327FE3;
+    border-radius: 2px;
+  
+}
+
 
 .menu-icon {
     display: none;
@@ -161,6 +168,10 @@ th, td {
 .titulo_table{
     width: 100%;
     padding: 10px 50%;
+}
+.form-field-img{
+    text-decoration: none;
+    padding: 30px;
 }
 
 
