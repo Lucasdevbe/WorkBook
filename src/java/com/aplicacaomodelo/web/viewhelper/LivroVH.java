@@ -12,8 +12,11 @@ import com.aplicacaomodelo.domain.Livro;
 import java.sql.Connection;
 import com.aplicacaomodelo.web.interfaces.IViewHelper;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -27,11 +30,16 @@ public class LivroVH implements IViewHelper {
     @Override
     public EntidadeDominio getEntidade(HttpServletRequest request) {
         //Obtêm a operação executada
+        
         String operacao = request.getParameter("operacao");
         Livro livro = new Livro();
         switch (operacao) {
             case "SALVAR": {
-                
+            try {
+                request.setCharacterEncoding("UTF-8");
+            } catch (UnsupportedEncodingException ex) {
+                Logger.getLogger(LivroVH.class.getName()).log(Level.SEVERE, null, ex);
+            }
                 
                 String nome = request.getParameter("nome");
                 String autor = request.getParameter("autor");
@@ -48,6 +56,8 @@ public class LivroVH implements IViewHelper {
 
                 String spreco_final = request.getParameter("preco_final");
                 double preco_final = Double.parseDouble(spreco_final.replace(",", "."));
+                String imagem_livro = request.getParameter("imagem_livro");
+                byte imagem= Byte.parseByte(imagem_livro);
 
                 livro.setNome(nome);
                 livro.setAutor(autor);
@@ -61,6 +71,7 @@ public class LivroVH implements IViewHelper {
                 livro.setEstoque(estoque);
                 livro.setPreco_custo(preco_custo);
                 livro.setPreco_final(preco_final);
+                livro.setImagem_livro(imagem);
 
                 break;
             }

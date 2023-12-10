@@ -60,7 +60,8 @@ public class LivroDAO extends AbstractJdbcDAO {
             connection.setAutoCommit(false);
 
             StringBuilder sql = new StringBuilder();
-            sql.append("INSERT INTO tb_Livros (nome, autor, editora, ano, descricao, categoria, estoque,preco_custo, preco_final ,fk_vendedor ) VALUES (?,?,?,?,?,?,?,?,?,?)");
+            sql.append("INSERT INTO tb_Livros (nome, autor, editora, ano, descricao,"
+                    + " categoria, estoque,preco_custo, preco_final ,imagem_livro ) VALUES (?,?,?,?,?,?,?,?,?,?,?)");
 
             pst = connection.prepareStatement(sql.toString(), Statement.RETURN_GENERATED_KEYS);
 
@@ -74,6 +75,7 @@ public class LivroDAO extends AbstractJdbcDAO {
             pst.setInt(7, p.getEstoque());
             pst.setDouble(8, p.getPreco_custo());
             pst.setDouble(9, p.getPreco_final());
+            pst.setByte(10, p.getImagem_livro());
             
             
             
