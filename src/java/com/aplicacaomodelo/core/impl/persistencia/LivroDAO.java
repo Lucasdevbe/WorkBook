@@ -8,6 +8,7 @@ import com.aplicacaomodelo.domain.EntidadeDominio;
 import com.aplicacaomodelo.domain.Livro;
 
 import com.aplicacaomodelo.domain.Vendedor;
+import java.io.InputStream;
 import java.sql.Connection;
 
 import java.sql.PreparedStatement;
@@ -61,7 +62,7 @@ public class LivroDAO extends AbstractJdbcDAO {
 
             StringBuilder sql = new StringBuilder();
             sql.append("INSERT INTO tb_Livros (nome, autor, editora, ano, descricao,"
-                    + " categoria, estoque,preco_custo, preco_final ,imagem_livro ) VALUES (?,?,?,?,?,?,?,?,?,?,?)");
+                    + " categoria, estoque,preco_custo, preco_final ,imagem_livro ) VALUES (?,?,?,?,?,?,?,?,?,?)");
 
             pst = connection.prepareStatement(sql.toString(), Statement.RETURN_GENERATED_KEYS);
 
@@ -75,7 +76,7 @@ public class LivroDAO extends AbstractJdbcDAO {
             pst.setInt(7, p.getEstoque());
             pst.setDouble(8, p.getPreco_custo());
             pst.setDouble(9, p.getPreco_final());
-            pst.setByte(10, p.getImagem_livro());
+            pst.setBinaryStream(10, (InputStream) p.getImagem_livro());
             
             
             

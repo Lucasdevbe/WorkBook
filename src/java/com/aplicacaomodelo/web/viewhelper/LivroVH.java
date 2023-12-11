@@ -11,6 +11,9 @@ import com.aplicacaomodelo.domain.EntidadeDominio;
 import com.aplicacaomodelo.domain.Livro;
 import java.sql.Connection;
 import com.aplicacaomodelo.web.interfaces.IViewHelper;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.sql.PreparedStatement;
@@ -20,6 +23,9 @@ import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
+import javax.websocket.Decoder;
+
 
 /**
  *
@@ -33,6 +39,9 @@ public class LivroVH implements IViewHelper {
         
         String operacao = request.getParameter("operacao");
         Livro livro = new Livro();
+        
+        
+        
         switch (operacao) {
             case "SALVAR": {
             try {
@@ -56,8 +65,17 @@ public class LivroVH implements IViewHelper {
 
                 String spreco_final = request.getParameter("preco_final");
                 double preco_final = Double.parseDouble(spreco_final.replace(",", "."));
-                String imagem_livro = request.getParameter("imagem_livro");
-                byte imagem= Byte.parseByte(imagem_livro);
+                
+                
+                
+                File imagem = new File(request.getParameter("imagem_livro"));
+                FileInputStream imagem_livro = null;
+                try {
+                    imagem_livro = new FileInputStream(imagem);
+                } catch (FileNotFoundException ex) {
+                    Logger.getLogger(LivroVH.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
 
                 livro.setNome(nome);
                 livro.setAutor(autor);
@@ -71,10 +89,11 @@ public class LivroVH implements IViewHelper {
                 livro.setEstoque(estoque);
                 livro.setPreco_custo(preco_custo);
                 livro.setPreco_final(preco_final);
-                livro.setImagem_livro(imagem);
+                livro.setImagem_livro((Decoder.BinaryStream) imagem_livro);
 
                 break;
             }
+
 
             case "VISUALIZAR": {
                 String nome = request.getParameter("nome");

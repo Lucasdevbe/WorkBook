@@ -4,6 +4,8 @@
  */
 package com.aplicacaomodelo.domain;
 import com.aplicacaomodelo.domain.Vendedor;
+import javax.websocket.Decoder;
+import javax.websocket.Decoder.BinaryStream;
 /**
  *
  * @author silva
@@ -23,7 +25,7 @@ public class Livro extends EntidadeDominio {
     private int estoque;
     private double preco_custo;
     private double preco_final;
-    private byte imagem_livro;
+    private BinaryStream imagem_livro;
 
     
 
@@ -32,7 +34,7 @@ public class Livro extends EntidadeDominio {
     }
 
     public Livro(int i, String nome, String autor, String editora, int ano, String descricao, 
-            String categoria, int estoque, double preco_custo, double preco_final, byte imagem_livro) {
+            String categoria, int estoque, double preco_custo, double preco_final, BinaryStream imagem_livro) {
 
         
         
@@ -46,6 +48,7 @@ public class Livro extends EntidadeDominio {
         this.estoque = estoque;
         this.preco_custo = preco_custo;
         this.preco_final = preco_final;
+        this.imagem_livro = imagem_livro;
         
     }
 
@@ -144,11 +147,11 @@ public class Livro extends EntidadeDominio {
     public void setPreco_final(double preco_final) {
         this.preco_final = preco_final;
     }
-    public byte getImagem_livro() {
+    public BinaryStream getImagem_livro() {
         return imagem_livro;
     }
 
-    public void setImagem_livro(byte imagem_livro) {
+    public void setImagem_livro(BinaryStream imagem_livro) {
         this.imagem_livro = imagem_livro;
     }
 }
