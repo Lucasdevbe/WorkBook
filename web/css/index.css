@@ -6,6 +6,7 @@
     -azul_claro:    #2ABBFA;
     -branco: #fff;
     -verde_header: #28E07C;
+    -buttons: #009688;
 }
 
 
@@ -56,10 +57,11 @@ nav {
 .nav-links a {
     color: #fff;
     text-decoration: none;
+    padding: 3px;
 }
 .nav-links a:hover{
     
-    background-color: #327FE3;
+    background-color: #009688;
     border-radius: 2px;
   
 }
