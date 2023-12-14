@@ -16,12 +16,12 @@
     
     <script type="text/javascript" src="js/cadastropessoas.js"></script>
 </head>
-<body onload="consultar()" >
+<body  >
     <header>
-        <c:forEach   var="vendedor" items="${listaVendedor}" varStatus="id">
-                <p>Olá, ${vendedor.nome} seja bem-vindo </p>
+        <c:forEach var="vendedor" items="${listaVendedor}" varStatus="id">
+                <p> ${vendedor.id}  </p>
                 
-                    </c:forEach>
+                    
                 <h1>WorkBook</h1>
             <nav>
                 <div class="menu-icon">&#9776;</div>
@@ -41,13 +41,7 @@
             <h2>Menu</h2>
             
             
-            Olá,<c:forEach var="vendedor" items="${listaVendedor}" varStatus="id"> ${vendedor.nome}</c:forEach> seja bem-vindo.
-                
-                <tr>
-                    <td>${vendedor.nome}</td>
-                </tr>
-                
-                
+            Olá, ${vendedor.nome}</c:forEach> seja bem-vindo.
             
             <ul>
                 <li><div class="Furos"></div><button onclick="consultar()"  type="submit" id="operacao" name="operacao" value="CONSULTAR" class="sidebar_menu">Meus Livros</button></li>

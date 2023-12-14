@@ -47,8 +47,9 @@
                                
                                
 
-                                    <tr>
+                                    <tr><c:forEach var="vendedor" items="${listaVendedor}" varStatus="id">
                                         <td>${vendedor.id}</td>
+                                        </c:forEach>
                                     </tr>
 
                                 
@@ -119,7 +120,9 @@
                                         <th>Descrição</th>
                                     </tr>
                                     <c:forEach var="livros" items="${listaLivros}" varStatus="id">
+                                        
                                         <tr id="${livros.id}">
+                                            
                                             <td onclick="selecionar(${livros.id})">${livros.nome}</td>
                                             <td>${livros.autor}</td>
                                             <td>${livros.editora} </td>

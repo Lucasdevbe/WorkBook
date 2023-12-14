@@ -60,7 +60,7 @@ public class VendedorVH implements IViewHelper {
             }
             case "CONSULTAR": {
                 
-                request.setAttribute("id_ususario", vendedor.getNome());
+              
                 
                 String email = request.getParameter("email");
                 vendedor.setEmail(email);
