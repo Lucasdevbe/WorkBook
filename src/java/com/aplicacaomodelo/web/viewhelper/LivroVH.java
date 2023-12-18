@@ -9,15 +9,13 @@ import com.aplicacaomodelo.core.aplicacao.Resultado;
 import com.aplicacaomodelo.core.util.Conexao;
 import com.aplicacaomodelo.domain.EntidadeDominio;
 import com.aplicacaomodelo.domain.Livro;
-import java.sql.Connection;
+import com.aplicacaomodelo.domain.Vendedor;
 import com.aplicacaomodelo.web.interfaces.IViewHelper;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -40,7 +38,7 @@ public class LivroVH implements IViewHelper {
         String operacao = request.getParameter("operacao");
         Livro livro = new Livro();
         
-        
+        Vendedor vendedor = new Vendedor();
         
         switch (operacao) {
             case "SALVAR": {
@@ -66,6 +64,8 @@ public class LivroVH implements IViewHelper {
                 String spreco_final = request.getParameter("preco_final");
                 double preco_final = Double.parseDouble(spreco_final.replace(",", "."));
                 
+                 int id_vend = request.getParameter(vendedor.);
+                
                 
                 
                 File imagem = new File(request.getParameter("imagem_livro"));
@@ -75,6 +75,9 @@ public class LivroVH implements IViewHelper {
                 } catch (FileNotFoundException ex) {
                     Logger.getLogger(LivroVH.class.getName()).log(Level.SEVERE, null, ex);
                 }
+                
+                
+               
                 
 
                 livro.setNome(nome);
@@ -90,6 +93,8 @@ public class LivroVH implements IViewHelper {
                 livro.setPreco_custo(preco_custo);
                 livro.setPreco_final(preco_final);
                 livro.setImagem_livro((Decoder.BinaryStream) imagem_livro);
+                livro.setId_vend(id_vend);
+                
 
                 break;
             }

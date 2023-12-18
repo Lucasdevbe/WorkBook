@@ -5,6 +5,7 @@
         <group>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/web/Login.jsp</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/java/com/aplicacaomodelo/domain/Pessoa.java</file>
+            <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/java/com/aplicacaomodelo/web/command/ConsultarCommand.java</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/java/com/aplicacaomodelo/web/interfaces/IViewHelper.java</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/java/com/aplicacaomodelo/web/viewhelper/Livro_Visualizar.java</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/web/css/login.css</file>
@@ -30,6 +31,7 @@
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/web/AreaVendedor.jsp</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/java/com/aplicacaomodelo/web/viewhelper/Livrosindex.java</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/web/Cadastrolivro.jsp</file>
+            <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/java/com/aplicacaomodelo/core/impl/persistencia/PessoaDAO.java</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/web/js/index.js</file>
         </group>
     </open-files>

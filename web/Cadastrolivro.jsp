@@ -39,21 +39,19 @@
         </header>
         <main>
             <div class="container">
+                
                 <div class="form-container">
-                    <form action="/WorkBook/SalvarLivro?id=${vendedor.id}" method="post">
+                    
+                    <form action="/WorkBook/SalvarLivro?" method="post">
+                        
+
                         <divi>
-
-                            <div class="formulario" id="${vendedor.id}">
-                               
-                               
-
-                                    <tr><c:forEach var="vendedor" items="${listaVendedor}" varStatus="id">
-                                        <td>${vendedor.id}</td>
+                        
+                            <div class="formulario" id="" value="${vendedor.id}">
+                                            <c:forEach var="vendedor" items="${listaVendedor}" varStatus="id">
+                                        <span id="id_vend" class="id_vend" name="id_vend" >${vendedor.id}</span>
                                         </c:forEach>
-                                    </tr>
-
-                                
-                               
+                                    
                                     <input type="file" id="imagem_livro" name="imagem_livro" class="form-field-img" placeholder="foto do livro"required>
                             </div>
                              <div class="formulario">
@@ -96,10 +94,10 @@
                                 <label name="preco_final" >Preço de Final</label>
                                 <input type="Text" size="12" onKeyUp="mascaraMoeda(this, event)"   id="preco_final" name="preco_final" class="form-field"  required>
                             </div>
-                            </div>
                             <input class="operacao" type="submit" name="operacao" id="operacao" value="SALVAR" >
+                            </div>
+                            
                             </form>
-
                             </div>
 
 

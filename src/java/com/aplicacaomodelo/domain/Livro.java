@@ -26,6 +26,9 @@ public class Livro extends EntidadeDominio {
     private double preco_custo;
     private double preco_final;
     private BinaryStream imagem_livro;
+    private int id_vend;
+
+    
 
     
 
@@ -34,7 +37,9 @@ public class Livro extends EntidadeDominio {
     }
 
     public Livro(int i, String nome, String autor, String editora, int ano, String descricao, 
-            String categoria, int estoque, double preco_custo, double preco_final, BinaryStream imagem_livro) {
+            String categoria, int estoque, double preco_custo, 
+            double preco_final, BinaryStream imagem_livro,
+            int id_vend) {
 
         
         
@@ -49,6 +54,7 @@ public class Livro extends EntidadeDominio {
         this.preco_custo = preco_custo;
         this.preco_final = preco_final;
         this.imagem_livro = imagem_livro;
+        this.id_vend = id_vend;
         
     }
 
@@ -153,5 +159,12 @@ public class Livro extends EntidadeDominio {
 
     public void setImagem_livro(BinaryStream imagem_livro) {
         this.imagem_livro = imagem_livro;
+    }
+    public int getId_vend() {
+        return id_vend;
+    }
+
+    public void setId_vend(int id_vend) {
+        this.id_vend = id_vend;
     }
 }

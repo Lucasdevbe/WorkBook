@@ -12,7 +12,7 @@ import java.util.Calendar;
  * @author Caio Gustavo
  */
 public class EntidadeDominio implements Serializable{
-    private Integer id;
+    public Integer id;
     private Calendar dtCadastro;
 
     /**
