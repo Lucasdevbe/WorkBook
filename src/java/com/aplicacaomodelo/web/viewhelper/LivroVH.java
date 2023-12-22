@@ -29,7 +29,7 @@ import javax.websocket.Decoder;
  *
  * @author silva
  */
-public class LivroVH implements IViewHelper {
+public class LivroVH implements IViewHelper{
 
     @Override
     public EntidadeDominio getEntidade(HttpServletRequest request) {
@@ -38,7 +38,7 @@ public class LivroVH implements IViewHelper {
         String operacao = request.getParameter("operacao");
         Livro livro = new Livro();
         
-        Vendedor vendedor = new Vendedor();
+        
         
         switch (operacao) {
             case "SALVAR": {
@@ -64,7 +64,8 @@ public class LivroVH implements IViewHelper {
                 String spreco_final = request.getParameter("preco_final");
                 double preco_final = Double.parseDouble(spreco_final.replace(",", "."));
                 
-                 int id_vend = request.getParameter(vendedor.);
+                String sid_vend = request.getParameter("id");
+                int id_vend = Integer.parseInt(sid_vend);
                 
                 
                 

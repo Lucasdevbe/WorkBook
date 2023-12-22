@@ -18,7 +18,7 @@
 </head>
 <body  >
     <header>
-        <c:forEach var="vendedor" items="${listaVendedor}" varStatus="id">
+        <c:forEach var="vendedor" items="${vendedorlist}" varStatus="id">
                 <p> ${vendedor.id}  </p>
                 
                     
@@ -41,11 +41,11 @@
             <h2>Menu</h2>
             
             
-            Olá, ${vendedor.nome}</c:forEach> seja bem-vindo.
+            Olá, ${vendedor.nome} seja bem-vindo.
             
             <ul>
                 <li><div class="Furos"></div><button onclick="consultar()"  type="submit" id="operacao" name="operacao" value="CONSULTAR" class="sidebar_menu">Meus Livros</button></li>
-                <li><div class="Furos"></div><button class="sidebar_menu"><a href="Cadastrolivro.jsp">Adicionar Novo Livro</a></button></li>
+                <li><div class="Furos"></div><button class="sidebar_menu"><a href="Cadastrolivro.jsp?id=${vendedor.id}"</c:forEach>>Adicionar Novo Livro</a></button></li>
                 <li><div class="Furos"></div><button class="sidebar_menu"><a href="#">Estatísticas de Vendas</a></button></li>
                 <!-- Adicione mais opções de menu conforme necessário -->
             </ul>

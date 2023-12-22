@@ -81,7 +81,7 @@ public class VendedorVH implements IViewHelper {
     @Override
     public void setView(Resultado resultado, HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
-        request.setAttribute("listaVendedor", resultado.getEntidades());
+        request.setAttribute("vendedorlist", resultado.getEntidades());
 
         request.getRequestDispatcher("AreaVendedor.jsp").forward(request, response);
 

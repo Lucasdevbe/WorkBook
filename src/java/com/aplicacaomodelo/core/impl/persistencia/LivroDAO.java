@@ -77,7 +77,7 @@ public class LivroDAO extends AbstractJdbcDAO {
             pst.setDouble(8, p.getPreco_custo());
             pst.setDouble(9, p.getPreco_final());
             pst.setBinaryStream(10, (InputStream) p.getImagem_livro());
-            pst.setSt(11, p.getId_vend());
+            pst.setInt(11, p.getId_vend());
             
             
             
