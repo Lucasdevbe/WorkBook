@@ -29,14 +29,15 @@ import javax.websocket.Decoder;
  *
  * @author silva
  */
-public class LivroVH implements IViewHelper{
+public  class LivroVH implements IViewHelper  {
 
-    @Override
-    public EntidadeDominio getEntidade(HttpServletRequest request) {
+    public EntidadeDominio getEntidade(HttpServletRequest request,Vendedor v ) {
         //Obtêm a operação executada
         
         String operacao = request.getParameter("operacao");
         Livro livro = new Livro();
+        Integer ven_id =v.id;
+       
         
         
         
@@ -64,8 +65,7 @@ public class LivroVH implements IViewHelper{
                 String spreco_final = request.getParameter("preco_final");
                 double preco_final = Double.parseDouble(spreco_final.replace(",", "."));
                 
-                String sid_vend = request.getParameter("id");
-                int id_vend = Integer.parseInt(sid_vend);
+                
                 
                 
                 
@@ -94,7 +94,7 @@ public class LivroVH implements IViewHelper{
                 livro.setPreco_custo(preco_custo);
                 livro.setPreco_final(preco_final);
                 livro.setImagem_livro((Decoder.BinaryStream) imagem_livro);
-                livro.setId_vend(id_vend);
+                livro.setId_vend(ven_id);
                 
 
                 break;
@@ -206,5 +206,10 @@ public class LivroVH implements IViewHelper{
                     break;
             }
         }
+    }
+
+    @Override
+    public EntidadeDominio getEntidade(HttpServletRequest request) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
