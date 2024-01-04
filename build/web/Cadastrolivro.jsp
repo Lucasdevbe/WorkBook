@@ -42,13 +42,13 @@
                 
                 <div class="form-container">
                      
-                    <form action="/WorkBook/SalvarLivro?id=<c:forEach var="vendedor" items="${vendedorlist}" varStatus="id">${vendedor.id}</c:forEach> "method="post">
+                    <form action="/WorkBook/SalvarLivro" method="post">
                         
 
                         <divi>
                         
                            
-                                    <input type="file" id="imagem_livro" name="imagem_livro" class="form-field-img" placeholder="foto do livro"required>
+                                    <input type="file" id="imagem_livro" name="imagem_livro" class="form-field-img" placeholder="foto do livro">
                             </div>
                              <div class="formulario">
                                 <label name="nome" >Nome Do Livro</label>

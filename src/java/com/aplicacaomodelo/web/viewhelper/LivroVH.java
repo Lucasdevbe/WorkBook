@@ -31,12 +31,12 @@ import javax.websocket.Decoder;
  */
 public  class LivroVH implements IViewHelper  {
 
-    public EntidadeDominio getEntidade(HttpServletRequest request,Vendedor v ) {
+    public EntidadeDominio getEntidade(HttpServletRequest request) {
         //Obtêm a operação executada
         
         String operacao = request.getParameter("operacao");
         Livro livro = new Livro();
-        Integer ven_id =v.id;
+        Vendedor v =(Vendedor) ;
        
         
         
@@ -69,13 +69,13 @@ public  class LivroVH implements IViewHelper  {
                 
                 
                 
-                File imagem = new File(request.getParameter("imagem_livro"));
-                FileInputStream imagem_livro = null;
-                try {
-                    imagem_livro = new FileInputStream(imagem);
-                } catch (FileNotFoundException ex) {
-                    Logger.getLogger(LivroVH.class.getName()).log(Level.SEVERE, null, ex);
-                }
+//                File imagem = new File(request.getParameter("imagem_livro"));
+//                FileInputStream imagem_livro = null;
+//                try {
+//                    imagem_livro = new FileInputStream(imagem);
+//                } catch (FileNotFoundException ex) {
+//                    Logger.getLogger(LivroVH.class.getName()).log(Level.SEVERE, null, ex);
+//                }
                 
                 
                
@@ -93,8 +93,8 @@ public  class LivroVH implements IViewHelper  {
                 livro.setEstoque(estoque);
                 livro.setPreco_custo(preco_custo);
                 livro.setPreco_final(preco_final);
-                livro.setImagem_livro((Decoder.BinaryStream) imagem_livro);
-                livro.setId_vend(ven_id);
+//                livro.setImagem_livro((Decoder.BinaryStream) imagem_livro);
+//                livro.setId_vend(v.id);
                 
 
                 break;
@@ -173,7 +173,7 @@ public  class LivroVH implements IViewHelper  {
         return livro;
 
     }
-
+    
     @Override
     public void setView(Resultado resultado, HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
@@ -212,4 +212,8 @@ public  class LivroVH implements IViewHelper  {
     public EntidadeDominio getEntidade(HttpServletRequest request) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+
+   
+
+   
 }
