@@ -36,7 +36,7 @@ public  class LivroVH implements IViewHelper  {
         
         String operacao = request.getParameter("operacao");
         Livro livro = new Livro();
-        Vendedor v =(Vendedor) ;
+        
        
         
         
@@ -208,10 +208,7 @@ public  class LivroVH implements IViewHelper  {
         }
     }
 
-    @Override
-    public EntidadeDominio getEntidade(HttpServletRequest request) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+    
 
    
 

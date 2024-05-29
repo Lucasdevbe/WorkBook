@@ -193,7 +193,7 @@ public class LivroDAO extends AbstractJdbcDAO {
             while (rs.next()) {
 
                 Livro p = new Livro();
-                Vendedor v = new Vendedor();
+                
 
                 p.setId(rs.getInt("id_pessoa"));
                 p.setNome(rs.getString("nome"));

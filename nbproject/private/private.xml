@@ -4,10 +4,14 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/web/Login.jsp</file>
+            <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/java/com/aplicacaomodelo/core/impl/persistencia/AbstractJdbcDAO.java</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/java/com/aplicacaomodelo/domain/Pessoa.java</file>
+            <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/java/com/aplicacaomodelo/core/interfaces/IFachada.java</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/java/com/aplicacaomodelo/web/command/ConsultarCommand.java</file>
+            <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/java/com/aplicacaomodelo/web/interfaces/ICommand.java</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/java/com/aplicacaomodelo/web/interfaces/IViewHelper.java</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/java/com/aplicacaomodelo/web/viewhelper/Livro_Visualizar.java</file>
+            <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/java/com/aplicacaomodelo/core/util/Conexao.java</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/web/css/login.css</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/java/com/aplicacaomodelo/web/viewhelper/VendedorVH.java</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/java/com/aplicacaomodelo/domain/Livro.java</file>
@@ -18,6 +22,7 @@
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/web/WEB-INF/web.xml</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/java/com/aplicacaomodelo/web/viewhelper/LivroVH.java</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/web/AlterarLivro.jsp</file>
+            <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/java/com/aplicacaomodelo/core/interfaces/IDAO.java</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/java/com/aplicacaomodelo/web/servlet/Servlet.java</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/src/java/com/aplicacaomodelo/web/viewhelper/PessoaVH.java</file>
             <file>file:/C:/Users/silva/Documents/ADS/Disciplinas_3°semestre/Servidor/WorkBook/web/js/cadastropessoas.js</file>
